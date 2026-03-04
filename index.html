@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saathvik Kellampalli</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { mono: ['Space Mono','monospace'], display: ['Fjalla One','sans-serif'], body: ['Syne','sans-serif'] },
+        colors: { gold: '#FFD700', 'gold-dim': '#B8860B', 'gold-mid': '#E6BE8A' },
+        animation: { 'scroll-pulse': 'scrollPulse 2s ease-in-out infinite', 'fade-up': 'fadeUp 0.7s ease forwards' },
+        keyframes: {
+          scrollPulse: { '0%,100%': { opacity:'0.3' }, '50%': { opacity:'1' } },
+          fadeUp: { from: { opacity:'0', transform:'translateY(28px)' }, to: { opacity:'1', transform:'translateY(0)' } }
+        }
+      }}
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { background:#000; color:#fff; font-family:'Syne',sans-serif; }
+    a { text-decoration:none; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes scrollPulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+    .anim-1{opacity:0;animation:fadeUp .7s ease .1s forwards}
+    .anim-2{opacity:0;animation:fadeUp .7s ease .25s forwards}
+    .anim-3{opacity:0;animation:fadeUp .7s ease .4s forwards}
+    .anim-4{opacity:0;animation:fadeUp .7s ease .55s forwards}
+    .anim-5{opacity:0;animation:fadeUp .7s ease .7s forwards}
+    .anim-6{opacity:0;animation:fadeUp .7s ease .85s forwards}
+    .scroll-line{animation:scrollPulse 2s ease-in-out infinite}
+    .name-img{filter:drop-shadow(0 0 30px rgba(255,215,0,0.25));transition:filter .5s}
+    .name-img:hover{filter:drop-shadow(0 0 50px rgba(255,215,0,0.5))}
+    .quick-card{transition:all .25s;border:1px solid #1a1a1a}
+    .quick-card:hover{border-color:#B8860B;background:rgba(255,215,0,0.04);transform:translateY(-4px)}
+    .code-win{transition:border-color .4s}
+    .code-win:hover{border-color:#444}
+    .social-btn{transition:all .3s;border:1px solid #222}
+    .social-btn:hover{border-color:#B8860B;color:#E6BE8A;background:rgba(255,215,0,0.05)}
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+  <div id="nav-container"></div>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16 pb-20 relative overflow-hidden">
+    <!-- bg glow -->
+    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 40% at 50% 65%,rgba(255,215,0,0.06) 0%,transparent 70%)"></div>
+    <!-- grid texture -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.015]" style="background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px"></div>
+
+    <div class="relative z-10 flex flex-col items-center">
+      <p class="anim-1 font-mono text-neutral-500 text-xs tracking-[0.3em] uppercase mb-10">Hello, I'm</p>
+
+      <!-- NAME IMAGE -->
+      <div class="anim-2 mb-8 w-full max-w-3xl px-4">
+        <img src="assets/name.jpeg" alt="Saathvik Kellampalli" class="name-img w-full h-auto object-contain max-h-48">
+      </div>
+
+      <p class="anim-3 text-neutral-400 text-sm tracking-[0.2em] uppercase mb-10 font-semibold">
+        <span class="text-yellow-400/80">BS Applied AI & DS</span> &nbsp;·&nbsp; IIT Jodhpur &nbsp;·&nbsp; LeapStart School of Technology
+      </p>
+
+      <div class="anim-4 border-l-2 border-yellow-700/60 pl-5 text-left mb-10 max-w-md">
+        <p class="font-mono text-neutral-400 text-sm leading-relaxed">
+          Building strong foundations in technology<br>to shape a smarter future.
+        </p>
+      </div>
+
+      <div class="anim-5 flex flex-wrap gap-4 justify-center mb-10">
+        <a href="assets/MyResume.pdf" class="bg-white text-black font-bold text-sm px-6 py-3 rounded-xl hover:bg-yellow-400 transition-colors duration-300">↓ Download CV</a>
+        <a href="projects.html" class="bg-yellow-400/10 border border-yellow-700/50 text-yellow-400 font-bold text-sm px-6 py-3 rounded-xl hover:bg-yellow-400/20 transition-all">View Projects →</a>
+        <a href="terminal.html" class="bg-transparent border border-neutral-700 text-neutral-300 font-bold text-sm px-6 py-3 rounded-xl hover:border-neutral-500 hover:text-white transition-all">&gt;_ Terminal</a>
+      </div>
+
+      <div class="anim-6 flex gap-5">
+        <a href="https://github.com/broskell" target="_blank" class="social-btn font-mono text-xs text-neutral-400 px-4 py-2 rounded-lg">GitHub</a>
+        <a href="https://www.linkedin.com/in/kellampalli-saathvik-354799360/" target="_blank" class="social-btn font-mono text-xs text-neutral-400 px-4 py-2 rounded-lg">LinkedIn</a>
+        <a href="contact.html" class="social-btn font-mono text-xs text-neutral-400 px-4 py-2 rounded-lg">Contact</a>
+      </div>
+    </div>
+
+    <!-- scroll cue -->
+    <div class="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+      <div class="scroll-line w-px h-14" style="background:linear-gradient(to bottom,#B8860B,transparent)"></div>
+      <span class="font-mono text-[10px] tracking-[0.2em] text-neutral-600">scroll</span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="max-w-4xl mx-auto px-6 pb-20">
+    <div class="grid grid-cols-3 border border-neutral-900 rounded-2xl overflow-hidden divide-x divide-neutral-900">
+      <div class="bg-neutral-950 py-8 text-center hover:bg-neutral-900 transition-colors">
+        <div class="font-display text-4xl text-yellow-400 leading-none mb-2" style="font-family:'Fjalla One',sans-serif">7+</div>
+        <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">Programming Languages</div>
+      </div>
+      <div class="bg-neutral-950 py-8 text-center hover:bg-neutral-900 transition-colors">
+        <div class="font-display text-4xl text-yellow-400 leading-none mb-2" style="font-family:'Fjalla One',sans-serif">3+</div>
+        <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">Live Projects</div>
+      </div>
+      <div class="bg-neutral-950 py-8 text-center hover:bg-neutral-900 transition-colors">
+        <div class="font-display text-4xl text-yellow-400 leading-none mb-2" style="font-family:'Fjalla One',sans-serif">20+</div>
+        <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">AI Tools Explored</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NAV -->
+  <section class="max-w-5xl mx-auto px-6 pb-20">
+    <p class="font-mono text-[10px] tracking-[0.25em] text-neutral-500 uppercase mb-2">Quick Navigation</p>
+    <h2 class="mb-8" style="font-family:'Fjalla One',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff">
+      Explore My <span class="text-yellow-400">Portfolio</span>
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+      <a href="about.html" class="quick-card bg-neutral-900/60 rounded-2xl p-6 flex flex-col gap-3">
+        <span class="text-2xl text-yellow-400">◉</span>
+        <span class="font-bold text-white text-sm">About Me</span>
+        <span class="font-mono text-[11px] text-neutral-500 leading-relaxed">Who I am, my story & what drives me</span>
+        <span class="font-mono text-[10px] text-neutral-700 mt-auto">Ctrl + 2</span>
+      </a>
+      <a href="education.html" class="quick-card bg-neutral-900/60 rounded-2xl p-6 flex flex-col gap-3">
+        <span class="text-2xl text-yellow-400">◈</span>
+        <span class="font-bold text-white text-sm">Education</span>
+        <span class="font-mono text-[11px] text-neutral-500 leading-relaxed">IIT Jodhpur, LST & my journey timeline</span>
+        <span class="font-mono text-[10px] text-neutral-700 mt-auto">Ctrl + 3</span>
+      </a>
+      <a href="projects.html" class="quick-card bg-neutral-900/60 rounded-2xl p-6 flex flex-col gap-3">
+        <span class="text-2xl text-yellow-400">◆</span>
+        <span class="font-bold text-white text-sm">Projects</span>
+        <span class="font-mono text-[11px] text-neutral-500 leading-relaxed">Honey, PlayHub, Lexis & more</span>
+        <span class="font-mono text-[10px] text-neutral-700 mt-auto">Ctrl + 4</span>
+      </a>
+      <a href="techstack.html" class="quick-card bg-neutral-900/60 rounded-2xl p-6 flex flex-col gap-3">
+        <span class="text-2xl text-yellow-400">◇</span>
+        <span class="font-bold text-white text-sm">Tech Stack</span>
+        <span class="font-mono text-[11px] text-neutral-500 leading-relaxed">Languages, tools & AI platforms</span>
+        <span class="font-mono text-[10px] text-neutral-700 mt-auto">Ctrl + 5</span>
+      </a>
+      <a href="terminal.html" class="quick-card bg-neutral-900/60 rounded-2xl p-6 flex flex-col gap-3">
+        <span class="text-2xl text-yellow-400">&gt;_</span>
+        <span class="font-bold text-white text-sm">Terminal</span>
+        <span class="font-mono text-[11px] text-neutral-500 leading-relaxed">Interactive CLI — try it out!</span>
+        <span class="font-mono text-[10px] text-neutral-700 mt-auto">Ctrl + 6</span>
+      </a>
+      <a href="contact.html" class="quick-card bg-neutral-900/60 rounded-2xl p-6 flex flex-col gap-3">
+        <span class="text-2xl text-yellow-400">✉</span>
+        <span class="font-bold text-white text-sm">Contact</span>
+        <span class="font-mono text-[11px] text-neutral-500 leading-relaxed">Let's connect & collaborate</span>
+        <span class="font-mono text-[10px] text-neutral-700 mt-auto">Ctrl + 7</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- GITHUB GRAPH -->
+  <section class="max-w-5xl mx-auto px-6 pb-20">
+    <p class="font-mono text-[10px] tracking-[0.25em] text-neutral-500 uppercase mb-2">Open Source</p>
+    <h2 class="mb-8" style="font-family:'Fjalla One',sans-serif;font-size:clamp(1.6rem,3.5vw,2.6rem)">
+      GitHub <span class="text-yellow-400">Activity</span>
+    </h2>
+
+    <!-- Contribution heatmap -->
+    <div class="bg-neutral-950 border border-neutral-900 rounded-2xl p-6 hover:border-neutral-700 transition-colors">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-mono text-xs text-neutral-500 tracking-wider">CONTRIBUTION GRAPH — broskell</span>
+        <a href="https://github.com/broskell" target="_blank" class="font-mono text-[11px] text-yellow-700 hover:text-yellow-400 transition-colors tracking-wider">View on GitHub →</a>
+      </div>
+      <img
+        src="https://ghchart.rshah.org/B8860B/broskell"
+        alt="GitHub Contribution Chart"
+        class="w-full h-auto rounded-lg"
+        style="background:#0a0a0a;padding:12px;border-radius:10px"
+        onerror="this.outerHTML='<div class=\'font-mono text-xs text-neutral-600 text-center py-8\'>Contribution graph unavailable — <a href=\'https://github.com/broskell\' target=\'_blank\' class=\'text-yellow-800 hover:text-yellow-600\'>view on GitHub</a></div>'"
+      >
+      <div class="flex items-center justify-between mt-3 px-1">
+        <span class="font-mono text-[10px] text-neutral-700">Less</span>
+        <div class="flex items-center gap-1">
+          <span class="w-3 h-3 rounded-sm bg-neutral-900"></span>
+          <span class="w-3 h-3 rounded-sm" style="background:#1a1000"></span>
+          <span class="w-3 h-3 rounded-sm" style="background:#3d2500"></span>
+          <span class="w-3 h-3 rounded-sm" style="background:#7a4d00"></span>
+          <span class="w-3 h-3 rounded-sm" style="background:#B8860B"></span>
+        </div>
+        <span class="font-mono text-[10px] text-neutral-700">More</span>
+      </div>
+    </div>
+
+    <p class="font-mono text-[10px] text-neutral-700 text-center mt-3 tracking-wider">Live activity from github.com/broskell</p>
+  </section>
+
+  <!-- CODE WINDOW -->
+  <section class="max-w-3xl mx-auto px-6 pb-28">
+    <div class="code-win bg-neutral-950 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="bg-neutral-900 px-5 py-3 flex items-center gap-2 border-b border-neutral-800">
+        <span class="w-3 h-3 rounded-full bg-red-400"></span>
+        <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+        <span class="w-3 h-3 rounded-full bg-green-400"></span>
+        <span class="font-mono text-xs text-neutral-500 ml-3">profile.js</span>
+      </div>
+      <pre class="p-7 font-mono text-sm leading-relaxed text-neutral-500 overflow-x-auto"><span class="text-neutral-300">const</span> profile = {
+  <span class="text-neutral-400">name</span>:        <span class="text-neutral-200">'Saathvik Kellampalli'</span>,
+  <span class="text-neutral-400">role</span>:        <span class="text-neutral-200">'Student · Tech Enthusiast · Builder'</span>,
+  <span class="text-neutral-400">education</span>:  [<span class="text-neutral-200">'IIT Jodhpur'</span>, <span class="text-neutral-200">'LeapStart School of Technology'</span>],
+  <span class="text-neutral-400">skills</span>:     [<span class="text-neutral-200">'Python'</span>, <span class="text-neutral-200">'JavaScript'</span>, <span class="text-neutral-200">'PostgreSQL'</span>, <span class="text-neutral-200">'Linux'</span>, <span class="text-neutral-200">'TailwindCSS'</span>],
+  <span class="text-neutral-400">cgpa</span>:        <span class="text-neutral-200">9.75</span>,
+  <span class="text-neutral-400">hardWorker</span>:  <span class="text-white">true</span>,
+  <span class="text-neutral-400">quickLearner</span>:<span class="text-white">true</span>,
+  <span class="text-neutral-400">hireable</span>:   <span class="text-neutral-300">function</span>() {
+    <span class="text-white">return</span> <span class="text-neutral-300">this</span>.<span class="text-neutral-400">hardWorker</span> &amp;&amp; <span class="text-neutral-300">this</span>.<span class="text-neutral-400">skills</span>.length &gt;= <span class="text-neutral-200">5</span>;
+  }
+};</pre>
+    </div>
+  </section>
+
+  <div id="bar-container"></div>
+  <script src="shared.js"></script>
+</body>
+</html>

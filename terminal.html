@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal — Saathvik Kellampalli</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body{background:#000;color:#fff;font-family:'Syne',sans-serif;}
+    a{text-decoration:none;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .anim{opacity:0;animation:fadeUp .6s ease forwards}
+    .d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}
+    #term-output::-webkit-scrollbar{width:3px}
+    #term-output::-webkit-scrollbar-track{background:#000}
+    #term-output::-webkit-scrollbar-thumb{background:#333;border-radius:2px}
+    #term-input:focus{outline:none}
+    .term-win{border:1px solid #1a1a1a;transition:border-color .4s}
+    .term-win:focus-within{border-color:#333}
+    .qbtn{transition:all .2s;border:1px solid #1a1a1a}
+    .qbtn:hover{border-color:#B8860B;color:#E6BE8A;background:rgba(255,215,0,0.05)}
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen pt-16 pb-24">
+  <div id="nav-container"></div>
+
+  <div class="max-w-4xl mx-auto px-6 py-14">
+    <p class="anim d1 font-mono text-[10px] tracking-[0.25em] text-neutral-500 uppercase mb-2">Interactive</p>
+    <h1 class="anim d1 mb-2" style="font-family:'Fjalla One',sans-serif;font-size:clamp(2rem,5vw,3.5rem)">
+      &gt;_ <span class="text-yellow-400">Terminal</span>
+    </h1>
+    <p class="anim d2 font-mono text-xs text-neutral-500 mb-8">
+      Type <code class="text-yellow-600 bg-neutral-900 px-2 py-0.5 rounded">help</code> to see all commands.
+    </p>
+
+    <!-- Terminal window -->
+    <div class="anim d2 term-win bg-[#0a0a0a] rounded-2xl overflow-hidden shadow-2xl">
+      <div class="bg-neutral-900 px-5 py-3.5 flex items-center gap-2 border-b border-neutral-800">
+        <span class="w-3 h-3 rounded-full bg-red-400"></span>
+        <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+        <span class="w-3 h-3 rounded-full bg-green-400"></span>
+        <span class="font-mono text-xs text-neutral-500 mx-auto">saathvik@portfolio ~ bash</span>
+      </div>
+      <div id="term-output" class="px-6 py-5 font-mono text-sm leading-loose min-h-[380px] max-h-[480px] overflow-y-auto text-neutral-300"></div>
+      <div class="flex items-center px-6 py-4 border-t border-neutral-900 bg-[#0a0a0a]">
+        <span class="font-mono text-sm text-yellow-700 whitespace-nowrap">saathvik@portfolio:~$ </span>
+        <input type="text" id="term-input"
+          class="flex-1 bg-transparent border-none font-mono text-sm text-white px-2"
+          style="caret-color:#FFD700"
+          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+          placeholder="type a command...">
+      </div>
+    </div>
+
+    <!-- Quick buttons -->
+    <div class="anim d3 flex flex-wrap gap-2 mt-5">
+      <button class="qbtn font-mono text-xs text-neutral-400 bg-neutral-950 px-4 py-2 rounded-lg" onclick="runCmd('help')">help</button>
+      <button class="qbtn font-mono text-xs text-neutral-400 bg-neutral-950 px-4 py-2 rounded-lg" onclick="runCmd('whoami')">whoami</button>
+      <button class="qbtn font-mono text-xs text-neutral-400 bg-neutral-950 px-4 py-2 rounded-lg" onclick="runCmd('skills')">skills</button>
+      <button class="qbtn font-mono text-xs text-neutral-400 bg-neutral-950 px-4 py-2 rounded-lg" onclick="runCmd('projects')">projects</button>
+      <button class="qbtn font-mono text-xs text-neutral-400 bg-neutral-950 px-4 py-2 rounded-lg" onclick="runCmd('education')">education</button>
+      <button class="qbtn font-mono text-xs text-neutral-400 bg-neutral-950 px-4 py-2 rounded-lg" onclick="runCmd('cgpa')">cgpa</button>
+      <button class="qbtn font-mono text-xs text-neutral-400 bg-neutral-950 px-4 py-2 rounded-lg" onclick="runCmd('contact')">contact</button>
+      <button class="qbtn font-mono text-xs text-neutral-400 bg-neutral-950 px-4 py-2 rounded-lg" onclick="runCmd('ai')">ai</button>
+      <button class="qbtn font-mono text-xs text-neutral-400 bg-neutral-950 px-4 py-2 rounded-lg" onclick="runCmd('quote')">quote</button>
+      <button class="qbtn font-mono text-xs text-neutral-400 bg-neutral-950 px-4 py-2 rounded-lg" onclick="runCmd('date')">date</button>
+      <button class="qbtn font-mono text-xs text-neutral-400 bg-neutral-950 px-4 py-2 rounded-lg" onclick="runCmd('clear')">clear</button>
+    </div>
+    <p class="anim d3 font-mono text-[10px] text-neutral-600 mt-3">↑ / ↓ arrow keys to navigate history · Enter to run</p>
+  </div>
+
+  <div id="bar-container"></div>
+  <script src="shared.js"></script>
+  <script>
+    const output = document.getElementById('term-output');
+    const input  = document.getElementById('term-input');
+    let history  = [];
+    let histIdx  = -1;
+
+    const commands = {
+      help: () => [
+        { t:'title', v:'Available Commands' },
+        { t:'blank' },
+        { t:'gold',  v:'  whoami      →  About Saathvik' },
+        { t:'out',   v:'  skills      →  List of skills & technologies' },
+        { t:'gold',  v:'  projects    →  Featured projects' },
+        { t:'out',   v:'  education   →  Academic background' },
+        { t:'gold',  v:'  cgpa        →  Academic performance' },
+        { t:'out',   v:'  contact     →  How to reach me' },
+        { t:'gold',  v:'  ai          →  AI tools explored' },
+        { t:'out',   v:'  quote       →  A random motivational quote' },
+        { t:'gold',  v:'  date        →  Current date & time' },
+        { t:'out',   v:'  clear       →  Clear the terminal' },
+        { t:'blank' },
+        { t:'dim',   v:'  Tip: Click the quick-buttons below or type above.' },
+      ],
+      whoami: () => [
+        { t:'blank' },
+        { t:'gold',  v:'  Saathvik Kellampalli' },
+        { t:'out',   v:'  ─────────────────────────────────────────' },
+        { t:'out',   v:'  Role     : UG Student | Tech Enthusiast | Builder' },
+        { t:'out',   v:'  College  : IIT Jodhpur × LeapStart School of Technology' },
+        { t:'out',   v:'  Program  : BS Applied AI & Data Science' },
+        { t:'out',   v:'  Batch    : 2025 – 2029' },
+        { t:'out',   v:'  Based in : Hyderabad, India' },
+        { t:'blank' },
+        { t:'green', v:'  hardWorker: true  |  quickLearner: true  |  hireable: true' },
+        { t:'blank' },
+      ],
+      skills: () => [
+        { t:'blank' },
+        { t:'title', v:'  Skills & Technologies' },
+        { t:'out',   v:'  ─────────────────────────────────────────' },
+        { t:'gold',  v:'  Languages : Python, JavaScript, HTML5, CSS3, PostgreSQL, TailwindCSS, Shell Script' },
+        { t:'out',   v:'  Data Sci  : NumPy, Pandas, Matplotlib, Scikit-learn, KNIME, Orange' },
+        { t:'gold',  v:'  Systems   : Linux, Ubuntu, VirtualBox, Networking, Shell' },
+        { t:'out',   v:'  DevOps    : Git, GitHub, VS Code' },
+        { t:'gold',  v:'  Platforms : Firebase, Vercel, Netlify, Groq API, LLaMA 3.1' },
+        { t:'out',   v:'  Learning  : React, TypeScript, Advanced JavaScript, jQuery' },
+        { t:'gold',  v:'  Security  : Kali Linux, Burp Suite, OWASP, Python Cryptography' },
+        { t:'blank' },
+      ],
+      projects: () => [
+        { t:'blank' },
+        { t:'title', v:'  Featured Projects' },
+        { t:'out',   v:'  ─────────────────────────────────────────' },
+        { t:'gold',  v:'  01 Honey    — Voice AI Study Buddy' },
+        { t:'out',   v:'     Tech: HTML · CSS · JS · Node.js · Groq API · LLaMA 3.1 · Web Speech API' },
+        { t:'out',   v:'     Live: https://honey-voice-buddy.onrender.com/' },
+        { t:'blank' },
+        { t:'gold',  v:'  02 PlayHub  — Sports Facility Booking Platform' },
+        { t:'out',   v:'     Tech: HTML · CSS · JS · Firebase · Firestore' },
+        { t:'out',   v:'     Live: https://playhub-lst.netlify.app/' },
+        { t:'blank' },
+        { t:'gold',  v:'  03 Lexis    — AI Live Lecture Companion (FEATURED)' },
+        { t:'out',   v:'     Tech: HTML · CSS · JS · Firebase Auth · Vercel · Groq API' },
+        { t:'out',   v:'     Live: https://lexis-phi.vercel.app/' },
+        { t:'blank' },
+        { t:'dim',   v:'  Also: Blood Bank MVP · Secure File Sharing · Flashcard App' },
+        { t:'blank' },
+      ],
+      education: () => [
+        { t:'blank' },
+        { t:'title', v:'  Education' },
+        { t:'out',   v:'  ─────────────────────────────────────────' },
+        { t:'gold',  v:'  IIT Jodhpur' },
+        { t:'out',   v:'  Program  : BS Applied AI & Data Science' },
+        { t:'out',   v:'  Duration : 2025 – 2029' },
+        { t:'blank' },
+        { t:'gold',  v:'  LeapStart School of Technology' },
+        { t:'out',   v:'  Program  : Experiential Learning (Dual Track)' },
+        { t:'out',   v:'  Duration : 2025 – 2029' },
+        { t:'blank' },
+        { t:'dim',   v:'  Run `cgpa` for academic performance details.' },
+        { t:'blank' },
+      ],
+      cgpa: () => [
+        { t:'blank' },
+        { t:'title', v:'  Academic Performance' },
+        { t:'out',   v:'  ─────────────────────────────────────────' },
+        { t:'gold',  v:'  Semester 1 CGPA : 9.75 / 10.00' },
+        { t:'out',   v:'  Semester 2      : In Progress (Jan 2025 onwards)' },
+        { t:'blank' },
+        { t:'green', v:'  ████████████████████████████████████░░░░  9.75/10' },
+        { t:'blank' },
+      ],
+      contact: () => [
+        { t:'blank' },
+        { t:'title', v:'  Contact Information' },
+        { t:'out',   v:'  ─────────────────────────────────────────' },
+        { t:'gold',  v:'  GitHub   : https://github.com/broskell' },
+        { t:'out',   v:'  LinkedIn : linkedin.com/in/kellampalli-saathvik-354799360' },
+        { t:'gold',  v:'  Email    : Available via contact form on this portfolio' },
+        { t:'blank' },
+        { t:'dim',   v:'  Navigate to contact.html (Ctrl+7) to send a message.' },
+        { t:'blank' },
+      ],
+      ai: () => [
+        { t:'blank' },
+        { t:'title', v:'  AI Tools Explored (20+)' },
+        { t:'out',   v:'  ─────────────────────────────────────────' },
+        { t:'gold',  v:'  LLMs      : ChatGPT, Claude, Gemini, Perplexity, Grok, DeepSeek' },
+        { t:'out',   v:'  Dev Tools : Cursor, Windsurf, Loveable, Replit, Bolt, CodePen' },
+        { t:'gold',  v:'  Creative  : Canva, Midjourney, VEED, Gamma, Suno AI, NapkinAI' },
+        { t:'out',   v:'  Viz & Math: Flourish, GeoGebra, CalcPlot3D' },
+        { t:'gold',  v:'  Workflow  : Flowgorithm, Manas, Prompt Cowboy' },
+        { t:'blank' },
+      ],
+      date: () => [
+        { t:'blank' },
+        { t:'green', v:'  ' + new Date().toLocaleString('en-IN', { timeZone:'Asia/Kolkata', dateStyle:'full', timeStyle:'medium' }) },
+        { t:'blank' },
+      ],
+      quote: () => {
+        const q = [
+          'Building strong foundations in technology to shape a smarter future.',
+          'Learn fast, build faster, iterate forever.',
+          'Every expert was once a beginner who refused to quit.',
+          'The best code is the one that solves a real problem for a real person.',
+          'Consistency is the compound interest of learning.',
+        ];
+        return [
+          { t:'blank' },
+          { t:'gold', v:'  "' + q[Math.floor(Math.random()*q.length)] + '"' },
+          { t:'dim',  v:"  — Saathvik's wall" },
+          { t:'blank' },
+        ];
+      },
+      clear: () => '__clear__',
+    };
+
+    function addLine(type, text) {
+      const d = document.createElement('div');
+      if (type === 'prompt') {
+        d.innerHTML = `<span style="color:#B8860B">saathvik@portfolio:~$ </span><span style="color:#fff">${text}</span>`;
+      } else {
+        const colors = { out:'#aaa', gold:'#E6BE8A', green:'#4ade80', err:'#f87171', dim:'#555', title:'#fff', blank:'' };
+        d.style.color = colors[type] || '#aaa';
+        if (type === 'title') d.style.fontWeight = '700';
+        if (type === 'blank') { d.style.height = '6px'; d.style.display = 'block'; }
+        d.textContent = text || '';
+      }
+      output.appendChild(d);
+      output.scrollTop = output.scrollHeight;
+    }
+
+    function runCmd(cmd) {
+      cmd = cmd.trim().toLowerCase();
+      if (!cmd) return;
+      if (history[0] !== cmd) history.unshift(cmd);
+      histIdx = -1;
+      addLine('prompt', cmd);
+      if (cmd in commands) {
+        const result = commands[cmd]();
+        if (result === '__clear__') { output.innerHTML = ''; return; }
+        result.forEach(l => addLine(l.t, l.v || ''));
+      } else {
+        addLine('err', `  bash: ${cmd}: command not found`);
+        addLine('dim', '  Type `help` to see available commands.');
+        addLine('blank');
+      }
+      input.value = '';
+    }
+
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { runCmd(this.value); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); if (histIdx < history.length-1) { histIdx++; this.value = history[histIdx]; } }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); if (histIdx > 0) { histIdx--; this.value = history[histIdx]; } else { histIdx=-1; this.value=''; } }
+    });
+
+    // Boot
+    const boot = [
+      { t:'gold',  v:'  ╔════════════════════════════════════════════╗' },
+      { t:'gold',  v:'  ║   Saathvik Kellampalli — Portfolio CLI     ║' },
+      { t:'gold',  v:'  ╚════════════════════════════════════════════╝' },
+      { t:'blank' },
+      { t:'green', v:'  System ready. Session started.' },
+      { t:'dim',   v:"  Type 'help' to see available commands." },
+      { t:'blank' },
+    ];
+    let delay = 0;
+    boot.forEach(l => { setTimeout(() => addLine(l.t, l.v || ''), delay); delay += 60; });
+    setTimeout(() => input.focus(), delay);
+  </script>
+</body>
+</html>

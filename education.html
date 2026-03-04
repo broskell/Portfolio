@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education — Saathvik Kellampalli</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body{background:#000;color:#fff;font-family:'Syne',sans-serif;}
+    a{text-decoration:none;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes goldPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,215,0,.3),0 0 16px rgba(255,215,0,.3)}50%{box-shadow:0 0 0 8px rgba(255,215,0,0),0 0 24px rgba(255,215,0,.5)}}
+    .anim{opacity:0;animation:fadeUp .6s ease forwards}
+    .d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}
+    .tl-dot-current{animation:goldPulse 2s ease-in-out infinite}
+    .tl-item:hover .tl-card{border-color:#555;transform:translateX(4px)}
+    .tl-card{transition:all .3s;border:1px solid #1a1a1a}
+    .term-win:hover{border-color:#444}
+    .term-win{transition:border-color .4s;border:1px solid #1a1a1a}
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen pt-16 pb-16">
+  <div id="nav-container"></div>
+
+  <main class="max-w-5xl mx-auto px-6 py-14">
+    <p class="anim d1 font-mono text-[10px] tracking-[0.25em] text-neutral-500 uppercase mb-2">Academic Path</p>
+    <h1 class="anim d1 mb-12" style="font-family:'Fjalla One',sans-serif;font-size:clamp(2rem,5vw,3.5rem)">
+      Education &amp; <span class="text-yellow-400">Journey</span>
+    </h1>
+
+    <!-- Terminal -->
+    <div class="anim d2 term-win bg-neutral-950 rounded-2xl overflow-hidden shadow-2xl mb-16">
+      <div class="bg-neutral-900 px-5 py-3 flex items-center gap-2 border-b border-neutral-800">
+        <span class="w-3 h-3 rounded-full bg-red-400"></span><span class="w-3 h-3 rounded-full bg-yellow-400"></span><span class="w-3 h-3 rounded-full bg-green-400"></span>
+        <span class="font-mono text-xs text-neutral-500 ml-3">$ cat education.txt</span>
+      </div>
+      <div class="p-6 font-mono text-sm leading-loose">
+        <div><span class="text-yellow-700">saathvik@portfolio:~$ </span><span class="text-white font-bold">cat education.txt</span></div>
+        <div class="pl-4 mt-2">
+          <div><span class="text-white font-bold">Institution:</span> <span class="text-neutral-300">Indian Institute of Technology, Jodhpur</span></div>
+          <div><span class="text-neutral-500">Program:    </span> <span class="text-neutral-400">BS in Applied AI & Data Science</span></div>
+          <div><span class="text-neutral-500">Duration:   </span> <span class="text-neutral-400">2025 – 2029</span></div>
+          <div><span class="text-neutral-500">CGPA:       </span> <span class="text-yellow-400 font-bold">9.75 / 10</span> <span class="text-neutral-600">(Semester 1)</span></div>
+        </div>
+        <div class="mt-3 pl-4">
+          <div><span class="text-white font-bold">Institution:</span> <span class="text-neutral-300">LeapStart School of Technology, Hyderabad</span></div>
+          <div><span class="text-neutral-500">Program:    </span> <span class="text-neutral-400">Experiential Learning (Dual Track)</span></div>
+          <div><span class="text-neutral-500">Duration:   </span> <span class="text-neutral-400">2025 – 2029</span></div>
+        </div>
+        <div class="mt-3"><span class="text-yellow-700">saathvik@portfolio:~$ </span><span class="text-neutral-700 animate-pulse">█</span></div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <p class="anim d2 font-mono text-[10px] tracking-[0.25em] text-neutral-500 uppercase mb-2">The Story So Far</p>
+    <h2 class="anim d2 mb-10" style="font-family:'Fjalla One',sans-serif;font-size:2rem">My <span class="text-yellow-400">Timeline</span></h2>
+
+    <div class="relative" style="--tl-left:148px">
+      <!-- vertical line -->
+      <div class="absolute top-0 bottom-0 w-px hidden md:block" style="left:148px;background:linear-gradient(to bottom,transparent,#333 10%,#333 90%,transparent)"></div>
+
+      <!-- Item 1 -->
+      <div class="tl-item anim d2 flex flex-col md:flex-row gap-0 mb-12 relative">
+        <div class="hidden md:block w-36 shrink-0 text-right pr-7 relative">
+          <span class="block font-mono text-xs text-neutral-400 font-bold">Jun – Aug</span>
+          <span class="block font-bold text-neutral-600 text-lg" style="font-family:'Fjalla One',sans-serif">2024</span>
+          <div class="absolute right-[-6px] top-2.5 w-3 h-3 rounded-full bg-neutral-700 border-2 border-black z-10 group-hover:bg-yellow-600 transition-colors"></div>
+        </div>
+        <div class="tl-card md:ml-10 flex-1 bg-neutral-900 rounded-2xl p-6">
+          <div class="text-2xl mb-2">🎓</div>
+          <h3 class="font-bold text-white text-lg mb-1">Pre-College Preparation</h3>
+          <p class="font-mono text-xs text-neutral-500 italic mb-4">Gap period — self-paced exploration of tech fundamentals</p>
+          <ul class="space-y-1.5">
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span>Completed Udemy and Google certifications to build foundational tech skills</li>
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span>Sparked deep interest in AI and Data Science</li>
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span>Self-paced learning to prepare for college-level coursework</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="tl-item anim d3 flex flex-col md:flex-row gap-0 mb-12 relative">
+        <div class="hidden md:block w-36 shrink-0 text-right pr-7 relative">
+          <span class="block font-mono text-xs text-neutral-400 font-bold">Sep – Dec</span>
+          <span class="block font-bold text-neutral-600 text-lg" style="font-family:'Fjalla One',sans-serif">2024</span>
+          <div class="absolute right-[-6px] top-2.5 w-3 h-3 rounded-full bg-neutral-700 border-2 border-black z-10"></div>
+        </div>
+        <div class="tl-card md:ml-10 flex-1 bg-neutral-900 rounded-2xl p-6">
+          <div class="text-2xl mb-2">🚀</div>
+          <h3 class="font-bold text-white text-lg mb-1">First Semester — Dual Track Learning</h3>
+          <p class="font-mono text-xs text-neutral-500 italic mb-4">IIT Jodhpur + LeapStart School of Technology</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div class="bg-black border border-neutral-800 rounded-xl p-4">
+              <div class="font-mono text-[11px] tracking-wider text-yellow-600 uppercase mb-3 border-b border-neutral-800 pb-2">🏛 IIT Jodhpur</div>
+              <ul class="space-y-1.5">
+                <li class="flex gap-2 text-xs text-neutral-400"><span class="text-yellow-700">▹</span><span><strong class="text-neutral-200">Core:</strong> Python, SQL, Data Analysis, Prompt Engineering</span></li>
+                <li class="flex gap-2 text-xs text-neutral-400"><span class="text-yellow-700">▹</span><span><strong class="text-neutral-200">Libs:</strong> NumPy, Pandas, Matplotlib, Scikit-learn</span></li>
+                <li class="flex gap-2 text-xs text-neutral-400"><span class="text-yellow-700">▹</span><span><strong class="text-neutral-200">Tools:</strong> Colab, Kaggle, KNIME, Hugging Face</span></li>
+                <li class="flex gap-2 text-xs text-neutral-400"><span class="text-yellow-700">▹</span><span><strong class="text-neutral-200">Projects:</strong> Flashcard app, Quick Commerce analysis</span></li>
+              </ul>
+            </div>
+            <div class="bg-black border border-neutral-800 rounded-xl p-4">
+              <div class="font-mono text-[11px] tracking-wider text-yellow-600 uppercase mb-3 border-b border-neutral-800 pb-2">💻 LeapStart</div>
+              <ul class="space-y-1.5">
+                <li class="flex gap-2 text-xs text-neutral-400"><span class="text-yellow-700">▹</span><span><strong class="text-neutral-200">Web:</strong> HTML5, CSS3, JavaScript, DOM</span></li>
+                <li class="flex gap-2 text-xs text-neutral-400"><span class="text-yellow-700">▹</span><span><strong class="text-neutral-200">Systems:</strong> Linux, Ubuntu, VirtualBox, Shell</span></li>
+                <li class="flex gap-2 text-xs text-neutral-400"><span class="text-yellow-700">▹</span><span><strong class="text-neutral-200">DevOps:</strong> Git, GitHub, VS Code</span></li>
+                <li class="flex gap-2 text-xs text-neutral-400"><span class="text-yellow-700">▹</span><span><strong class="text-neutral-200">Built:</strong> Portfolio, resume & UI replica sites</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="inline-flex items-center gap-3 bg-yellow-400/8 border border-yellow-800/40 rounded-xl px-5 py-3">
+            <span class="font-mono text-[11px] tracking-wider text-yellow-600 uppercase">Semester 1 CGPA</span>
+            <span class="text-yellow-400 font-bold text-xl" style="font-family:'Fjalla One',sans-serif">9.75</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="tl-item anim d3 flex flex-col md:flex-row gap-0 mb-12 relative">
+        <div class="hidden md:block w-36 shrink-0 text-right pr-7 relative">
+          <span class="block font-mono text-xs text-neutral-400 font-bold">Late Dec</span>
+          <span class="block font-bold text-neutral-600 text-lg" style="font-family:'Fjalla One',sans-serif">2024</span>
+          <div class="absolute right-[-6px] top-2.5 w-3 h-3 rounded-full bg-neutral-700 border-2 border-black z-10"></div>
+        </div>
+        <div class="tl-card md:ml-10 flex-1 bg-neutral-900 rounded-2xl p-6">
+          <div class="text-2xl mb-2">🛠️</div>
+          <h3 class="font-bold text-white text-lg mb-1">SDLC Workshop</h3>
+          <p class="font-mono text-xs text-neutral-500 italic mb-4">Mentor: SaiRam Bingi (PMP®, CBAP®, CSM®, ITIL®, PRINCE 2)</p>
+          <ul class="space-y-1.5">
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span>Learned SDLC fundamentals, business case creation, project charter, and FRD</li>
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span><span><strong class="text-neutral-200">Applied Project:</strong> Rapid Blood Bank Supply Platform (MVP)</span></li>
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span>Designed FRD and developed working prototype with HTML, CSS, JS, Firebase</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="tl-item anim d4 flex flex-col md:flex-row gap-0 mb-12 relative">
+        <div class="hidden md:block w-36 shrink-0 text-right pr-7 relative">
+          <span class="block font-mono text-xs text-neutral-400 font-bold">Dec – Jan</span>
+          <span class="block font-bold text-neutral-600 text-lg" style="font-family:'Fjalla One',sans-serif">2024–25</span>
+          <div class="absolute right-[-6px] top-2.5 w-3 h-3 rounded-full bg-neutral-700 border-2 border-black z-10"></div>
+        </div>
+        <div class="tl-card md:ml-10 flex-1 bg-neutral-900 rounded-2xl p-6">
+          <div class="text-2xl mb-2">🔒</div>
+          <h3 class="font-bold text-white text-lg mb-1">Cybersecurity Tasks</h3>
+          <p class="font-mono text-xs text-neutral-500 italic mb-4">Future Interns — Security Assessment Experience</p>
+          <ul class="space-y-1.5">
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span>Vulnerability assessment on OWASP Juice Shop using Burp Suite on Kali Linux</li>
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span>Identified common web vulnerabilities and analyzed attack flows</li>
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span><span><strong class="text-neutral-200">Secure File Sharing:</strong> Python encryption system using cryptography libraries</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Item 5 - Current -->
+      <div class="tl-item anim d5 flex flex-col md:flex-row gap-0 mb-4 relative">
+        <div class="hidden md:block w-36 shrink-0 text-right pr-7 relative">
+          <span class="block font-mono text-xs text-neutral-400 font-bold">Late Jan</span>
+          <span class="block font-bold text-neutral-600 text-lg" style="font-family:'Fjalla One',sans-serif">2025</span>
+          <div class="tl-dot-current absolute right-[-6px] top-2.5 w-3 h-3 rounded-full bg-yellow-400 border-2 border-black z-10"></div>
+        </div>
+        <div class="tl-card md:ml-10 flex-1 bg-yellow-400/3 rounded-2xl p-6" style="border-color:rgba(255,215,0,0.15)">
+          <div class="text-2xl mb-2">🎯</div>
+          <h3 class="font-bold text-white text-lg mb-1">Second Semester — In Progress</h3>
+          <p class="font-mono text-xs text-neutral-500 italic mb-4">Advancing to more complex frameworks and industry tools</p>
+          <ul class="space-y-1.5 mb-4">
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span><span><strong class="text-neutral-200">Current Focus:</strong> Advanced JS, jQuery, TypeScript, ES6, React, PostgreSQL, TailwindCSS</span></li>
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span>Building on first semester foundations with industry-standard tools</li>
+            <li class="flex gap-2 text-sm text-neutral-400"><span class="text-yellow-700 shrink-0">▹</span>Ready to take on more advanced challenges and real-world applications</li>
+          </ul>
+          <span class="inline-block font-mono text-[11px] tracking-wider text-yellow-400 bg-yellow-400/8 border border-yellow-700/50 px-4 py-1.5 rounded-full uppercase">Currently Learning</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="bar-container"></div>
+  <script src="shared.js"></script>
+</body>
+</html>

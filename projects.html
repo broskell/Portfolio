@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Saathvik Kellampalli</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body{background:#000;color:#fff;font-family:'Syne',sans-serif;}
+    a{text-decoration:none;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .anim{opacity:0;animation:fadeUp .6s ease forwards}
+    .d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
+    .proj-card{transition:all .3s;border:1px solid #1a1a1a}
+    .proj-card:hover{border-color:#444;transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    .other-card{transition:all .25s;border:1px solid #1a1a1a}
+    .other-card:hover{border-color:#B8860B;background:rgba(255,215,0,0.03);transform:translateY(-4px)}
+    .proj-link-demo{transition:all .25s}
+    .proj-link-demo:hover{background:#FFD700;color:#000}
+    .proj-link-code{transition:all .25s;border:1px solid #333}
+    .proj-link-code:hover{border-color:#666;color:#fff}
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen pt-16 pb-16">
+  <div id="nav-container"></div>
+
+  <main class="max-w-6xl mx-auto px-6 py-14">
+    <p class="anim d1 font-mono text-[10px] tracking-[0.25em] text-neutral-500 uppercase mb-2">My Work</p>
+    <h1 class="anim d1 mb-4" style="font-family:'Fjalla One',sans-serif;font-size:clamp(2rem,5vw,3.5rem)">
+      Featured <span class="text-yellow-400">Projects</span>
+    </h1>
+    <p class="anim d2 text-neutral-500 text-sm max-w-lg leading-relaxed mb-12">
+      A showcase of applications built using modern technologies and hands-on learning — from voice AI to sports booking platforms.
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
+
+      <!-- Honey -->
+      <div class="proj-card anim d2 bg-neutral-950 rounded-2xl overflow-hidden flex flex-col">
+        <div class="bg-neutral-900 aspect-video flex items-center justify-center relative border-b border-neutral-800">
+          <span class="text-7xl opacity-10">🤖</span>
+          <div class="absolute inset-0 flex items-center justify-center" style="background:linear-gradient(135deg,rgba(255,215,0,0.04),transparent)">
+            <span style="font-family:'Fjalla One',sans-serif;font-size:2rem;color:rgba(255,255,255,0.05);letter-spacing:8px">HONEY</span>
+          </div>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_#4ade80]"></span>
+            <span class="font-mono text-[10px] tracking-wider text-neutral-500 uppercase">Live</span>
+          </div>
+          <div class="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 01</div>
+          <h3 class="font-bold text-white text-xl mb-3">Honey — Voice AI Study Buddy</h3>
+          <p class="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">
+            An interactive voice-powered AI assistant built for students. Features speech-to-text, text-to-speech,
+            and intelligent responses powered by Groq's LLaMA model. Helps with study sessions through natural conversation.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">HTML</span>
+            <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">CSS</span>
+            <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">JavaScript</span>
+            <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">Node.js</span>
+            <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">Groq API</span>
+            <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">LLaMA 3.1</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="https://honey-voice-buddy.onrender.com/" target="_blank" class="proj-link-demo flex-1 text-center bg-white text-black font-bold text-sm py-2.5 rounded-xl">↗ Live Demo</a>
+            <a href="https://github.com/broskell/honey-voice-agent" target="_blank" class="proj-link-code flex-1 text-center bg-transparent text-neutral-400 font-bold text-sm py-2.5 rounded-xl">⌥ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PlayHub -->
+      <div class="proj-card anim d3 bg-neutral-950 rounded-2xl overflow-hidden flex flex-col">
+        <div class="bg-neutral-900 aspect-video flex items-center justify-center relative border-b border-neutral-800">
+          <span class="text-7xl opacity-10">⚽</span>
+          <div class="absolute inset-0 flex items-center justify-center" style="background:linear-gradient(135deg,rgba(255,215,0,0.04),transparent)">
+            <span style="font-family:'Fjalla One',sans-serif;font-size:2rem;color:rgba(255,255,255,0.05);letter-spacing:8px">PLAYHUB</span>
+          </div>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_#4ade80]"></span>
+            <span class="font-mono text-[10px] tracking-wider text-neutral-500 uppercase">Live</span>
+          </div>
+          <div class="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 02</div>
+          <h3 class="font-bold text-white text-xl mb-3">PlayHub — Sport Booking Web App</h3>
+          <p class="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">
+            A comprehensive sports facility booking platform designed for LST students. Enables easy scheduling
+            and management of sport courts with real-time availability and Firebase authentication.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">HTML</span>
+            <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">CSS</span>
+            <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">JavaScript</span>
+            <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">Firebase</span>
+            <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">Firestore</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="https://playhub-lst.netlify.app/" target="_blank" class="proj-link-demo flex-1 text-center bg-white text-black font-bold text-sm py-2.5 rounded-xl">↗ Live Demo</a>
+            <a href="https://github.com/broskell/LeapStart-PlayHub" target="_blank" class="proj-link-code flex-1 text-center bg-transparent text-neutral-400 font-bold text-sm py-2.5 rounded-xl">⌥ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lexis - featured full width -->
+      <div class="proj-card anim d4 bg-neutral-950 rounded-2xl overflow-hidden lg:col-span-2">
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_1.2fr]">
+          <div class="bg-neutral-900 flex items-center justify-center relative border-b md:border-b-0 md:border-r border-neutral-800 min-h-48">
+            <span class="text-8xl opacity-10">📚</span>
+            <div class="absolute inset-0 flex items-center justify-center" style="background:linear-gradient(135deg,rgba(255,215,0,0.05),transparent)">
+              <span style="font-family:'Fjalla One',sans-serif;font-size:2.5rem;color:rgba(255,255,255,0.05);letter-spacing:10px">LEXIS</span>
+            </div>
+          </div>
+          <div class="p-7 flex flex-col">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_#4ade80]"></span>
+              <span class="font-mono text-[10px] tracking-wider text-neutral-500 uppercase">Live · Featured Project</span>
+            </div>
+            <div class="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 03</div>
+            <h3 class="font-bold text-white text-xl mb-3">Lexis — AI Study Assistant</h3>
+            <p class="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">
+              A live lecture companion that turns speech into structured study material. Captures lectures via browser microphone,
+              generates transcripts, then uses AI to create notes, summaries, mindmaps, quizzes, and flashcards. Includes
+              Google sign-in, a dashboard, and lesson-aware Q&A powered by Groq.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">HTML</span>
+              <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">CSS</span>
+              <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">JavaScript</span>
+              <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">Firebase Auth</span>
+              <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">Vercel</span>
+              <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">Groq API</span>
+              <span class="font-mono text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2.5 py-1 rounded">LLaMA 3.1</span>
+            </div>
+            <div class="flex gap-3">
+              <a href="https://lexis-phi.vercel.app/" target="_blank" class="proj-link-demo flex-1 text-center bg-white text-black font-bold text-sm py-2.5 rounded-xl">↗ Live Demo</a>
+              <a href="https://github.com/broskell/Lexis" target="_blank" class="proj-link-code flex-1 text-center bg-transparent text-neutral-400 font-bold text-sm py-2.5 rounded-xl">⌥ GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="h-px bg-neutral-900 mb-12"></div>
+
+    <!-- Other work -->
+    <p class="anim d1 font-mono text-[10px] tracking-[0.25em] text-neutral-500 uppercase mb-2">Also Built</p>
+    <h2 class="anim d2 mb-8" style="font-family:'Fjalla One',sans-serif;font-size:2rem">Other <span class="text-yellow-400">Work</span></h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="other-card anim d2 bg-neutral-950 rounded-xl p-5">
+        <div class="text-2xl mb-3">🩸</div>
+        <h4 class="font-bold text-white text-sm mb-2">Blood Bank Supply Platform</h4>
+        <p class="text-neutral-500 text-xs leading-relaxed">Rapid Blood Bank MVP — Firebase backend, FRD documentation. SDLC workshop project.</p>
+      </div>
+      <div class="other-card anim d3 bg-neutral-950 rounded-xl p-5">
+        <div class="text-2xl mb-3">🔐</div>
+        <h4 class="font-bold text-white text-sm mb-2">Secure File Sharing Tool</h4>
+        <p class="text-neutral-500 text-xs leading-relaxed">File encryption system using Python's cryptography library for secure transfer between parties.</p>
+      </div>
+      <div class="other-card anim d4 bg-neutral-950 rounded-xl p-5">
+        <div class="text-2xl mb-3">🃏</div>
+        <h4 class="font-bold text-white text-sm mb-2">Flashcard Learning App</h4>
+        <p class="text-neutral-500 text-xs leading-relaxed">IITJ capstone — interactive flashcard app for spaced repetition learning built with Python.</p>
+      </div>
+      <div class="other-card anim d4 bg-neutral-950 rounded-xl p-5">
+        <div class="text-2xl mb-3">📈</div>
+        <h4 class="font-bold text-white text-sm mb-2">Quick Commerce Analysis</h4>
+        <p class="text-neutral-500 text-xs leading-relaxed">Business data analysis examining quick-commerce market trends with Pandas & Matplotlib.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="bar-container"></div>
+  <script src="shared.js"></script>
+</body>
+</html>
