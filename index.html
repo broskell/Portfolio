@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,61 +8,163 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: { extend: {
-        fontFamily: { mono: ['Space Mono','monospace'], display: ['Fjalla One','sans-serif'], body: ['Syne','sans-serif'] },
-        colors: { gold: '#FFD700', 'gold-dim': '#B8860B', 'gold-mid': '#E6BE8A' },
-        animation: { 'scroll-pulse': 'scrollPulse 2s ease-in-out infinite', 'fade-up': 'fadeUp 0.7s ease forwards' },
-        keyframes: {
-          scrollPulse: { '0%,100%': { opacity:'0.3' }, '50%': { opacity:'1' } },
-          fadeUp: { from: { opacity:'0', transform:'translateY(28px)' }, to: { opacity:'1', transform:'translateY(0)' } }
+      theme: {
+        extend: {
+          fontFamily: { mono: ['Space Mono', 'monospace'], display: ['Fjalla One', 'sans-serif'], body: ['Syne', 'sans-serif'] },
+          colors: { gold: '#FFD700', 'gold-dim': '#B8860B', 'gold-mid': '#E6BE8A' },
+          animation: { 'scroll-pulse': 'scrollPulse 2s ease-in-out infinite', 'fade-up': 'fadeUp 0.7s ease forwards' },
+          keyframes: {
+            scrollPulse: { '0%,100%': { opacity: '0.3' }, '50%': { opacity: '1' } },
+            fadeUp: { from: { opacity: '0', transform: 'translateY(28px)' }, to: { opacity: '1', transform: 'translateY(0)' } }
+          }
         }
-      }}
+      }
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
-    body { background:#000; color:#fff; font-family:'Syne',sans-serif; }
-    a { text-decoration:none; }
-    @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
-    @keyframes scrollPulse { 0%,100%{opacity:.3} 50%{opacity:1} }
-    .anim-1{opacity:0;animation:fadeUp .7s ease .1s forwards}
-    .anim-2{opacity:0;animation:fadeUp .7s ease .25s forwards}
-    .anim-3{opacity:0;animation:fadeUp .7s ease .4s forwards}
-    .anim-4{opacity:0;animation:fadeUp .7s ease .55s forwards}
-    .anim-5{opacity:0;animation:fadeUp .7s ease .7s forwards}
-    .anim-6{opacity:0;animation:fadeUp .7s ease .85s forwards}
-    .scroll-line{animation:scrollPulse 2s ease-in-out infinite}
-    .name-img{filter:drop-shadow(0 0 30px rgba(255,215,0,0.25));transition:filter .5s}
-    .name-img:hover{filter:drop-shadow(0 0 50px rgba(255,215,0,0.5))}
-    .quick-card{transition:all .25s;border:1px solid #1a1a1a}
-    .quick-card:hover{border-color:#B8860B;background:rgba(255,215,0,0.04);transform:translateY(-4px)}
-    .code-win{transition:border-color .4s}
-    .code-win:hover{border-color:#444}
-    .social-btn{transition:all .3s;border:1px solid #222}
-    .social-btn:hover{border-color:#B8860B;color:#E6BE8A;background:rgba(255,215,0,0.05)}
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        opacity: .3
+      }
+
+      50% {
+        opacity: 1
+      }
+    }
+
+    .anim-1 {
+      opacity: 0;
+      animation: fadeUp .7s ease .1s forwards
+    }
+
+    .anim-2 {
+      opacity: 0;
+      animation: fadeUp .7s ease .25s forwards
+    }
+
+    .anim-3 {
+      opacity: 0;
+      animation: fadeUp .7s ease .4s forwards
+    }
+
+    .anim-4 {
+      opacity: 0;
+      animation: fadeUp .7s ease .55s forwards
+    }
+
+    .anim-5 {
+      opacity: 0;
+      animation: fadeUp .7s ease .7s forwards
+    }
+
+    .anim-6 {
+      opacity: 0;
+      animation: fadeUp .7s ease .85s forwards
+    }
+
+    .scroll-line {
+      animation: scrollPulse 2s ease-in-out infinite
+    }
+
+    .name-img {
+      filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.25));
+      transition: filter .5s
+    }
+
+    .name-img:hover {
+      filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.5))
+    }
+
+    .quick-card {
+      transition: all .25s;
+      border: 1px solid #1a1a1a
+    }
+
+    .quick-card:hover {
+      border-color: #B8860B;
+      background: rgba(255, 215, 0, 0.04);
+      transform: translateY(-4px)
+    }
+
+    .code-win {
+      transition: border-color .4s
+    }
+
+    .code-win:hover {
+      border-color: #444
+    }
+
+    .social-btn {
+      transition: all .3s;
+      border: 1px solid #222
+    }
+
+    .social-btn:hover {
+      border-color: #B8860B;
+      color: #E6BE8A;
+      background: rgba(255, 215, 0, 0.05)
+    }
   </style>
 </head>
+
 <body class="bg-black text-white min-h-screen">
   <div id="nav-container"></div>
 
   <!-- HERO -->
-  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16 pb-20 relative overflow-hidden">
+  <section
+    class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16 pb-20 relative overflow-hidden">
     <!-- bg glow -->
-    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 40% at 50% 65%,rgba(255,215,0,0.06) 0%,transparent 70%)"></div>
+    <div class="absolute inset-0 pointer-events-none"
+      style="background:radial-gradient(ellipse 60% 40% at 50% 65%,rgba(255,215,0,0.06) 0%,transparent 70%)"></div>
     <!-- grid texture -->
-    <div class="absolute inset-0 pointer-events-none opacity-[0.015]" style="background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-[0.015]"
+      style="background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px">
+    </div>
 
     <div class="relative z-10 flex flex-col items-center">
       <p class="anim-1 font-mono text-neutral-500 text-xs mb-10">Hello, I'm</p>
 
-      <!-- NAME IMAGE -->
-      <div class="anim-2 mb-8 w-full max-w-3xl px-4">
-        <img src="assets/name.jpeg" alt="Saathvik Kellampalli" class="name-img w-full h-auto object-contain max-h-48">
+      <!-- NAME VIDEO -->
+      <div class="anim-2 mb-8 w-full max-w-3xl px-4 flex justify-center">
+        <div class="relative w-full max-w-[650px] overflow-hidden" style="aspect-ratio: 16 / 8;">
+          <video autoplay muted playsinline
+            class="absolute top-0 left-0 w-full h-[125%] object-cover object-top mix-blend-screen pointer-events-none">
+            <source src="assets/Cinematic_Text_Animation_Video_Generation.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
 
       <p class="anim-3 text-neutral-400 text-sm mt-5 mb-6 font-semibold tracking-wide">
-        <span class="text-yellow-400/80">BS Applied AI & DS</span> &nbsp;|&nbsp; IIT Jodhpur &nbsp;|&nbsp; LeapStart School of Technology
+        <span class="text-yellow-400/80">BS Applied AI & DS</span> &nbsp;|&nbsp; IIT Jodhpur &nbsp;|&nbsp; LeapStart
+        School of Technology
       </p>
 
       <div class="anim-4 border-l-2 border-yellow-700/60 pl-5 text-left mb-10 max-w-md">
@@ -71,14 +174,22 @@
       </div>
 
       <div class="anim-5 flex flex-wrap gap-4 justify-center mb-10">
-        <a href="assets/MyResume.pdf" class="bg-white text-black font-bold text-sm px-6 py-3 rounded-xl hover:bg-yellow-400 transition-colors duration-300">↓ Download CV</a>
-        <a href="projects.html" class="bg-yellow-400/10 border border-yellow-700/50 text-yellow-400 font-bold text-sm px-6 py-3 rounded-xl hover:bg-yellow-400/20 transition-all">View Projects →</a>
-        <a href="terminal.html" class="bg-transparent border border-neutral-700 text-neutral-300 font-bold text-sm px-6 py-3 rounded-xl hover:border-neutral-500 hover:text-white transition-all">&gt;_ Terminal</a>
+        <a href="assets/MyResume.pdf"
+          class="bg-white text-black font-bold text-sm px-6 py-3 rounded-xl hover:bg-yellow-400 transition-colors duration-300">↓
+          Download CV</a>
+        <a href="projects.html"
+          class="bg-yellow-400/10 border border-yellow-700/50 text-yellow-400 font-bold text-sm px-6 py-3 rounded-xl hover:bg-yellow-400/20 transition-all">View
+          Projects →</a>
+        <a href="terminal.html"
+          class="bg-transparent border border-neutral-700 text-neutral-300 font-bold text-sm px-6 py-3 rounded-xl hover:border-neutral-500 hover:text-white transition-all">&gt;_
+          Terminal</a>
       </div>
 
       <div class="anim-6 flex gap-5">
-        <a href="https://github.com/broskell" target="_blank" class="social-btn font-mono text-xs text-neutral-400 px-4 py-2 rounded-lg">GitHub</a>
-        <a href="https://www.linkedin.com/in/kellampalli-saathvik-354799360/" target="_blank" class="social-btn font-mono text-xs text-neutral-400 px-4 py-2 rounded-lg">LinkedIn</a>
+        <a href="https://github.com/broskell" target="_blank"
+          class="social-btn font-mono text-xs text-neutral-400 px-4 py-2 rounded-lg">GitHub</a>
+        <a href="https://www.linkedin.com/in/kellampalli-saathvik-354799360/" target="_blank"
+          class="social-btn font-mono text-xs text-neutral-400 px-4 py-2 rounded-lg">LinkedIn</a>
         <a href="contact.html" class="social-btn font-mono text-xs text-neutral-400 px-4 py-2 rounded-lg">Contact</a>
       </div>
     </div>
@@ -94,15 +205,18 @@
   <section class="max-w-4xl mx-auto px-6 pb-20">
     <div class="grid grid-cols-3 border border-neutral-900 rounded-2xl overflow-hidden divide-x divide-neutral-900">
       <div class="bg-neutral-950 py-8 text-center hover:bg-neutral-900 transition-colors">
-        <div class="font-display text-4xl text-yellow-400 leading-none mb-2" style="font-family:'Fjalla One',sans-serif">7+</div>
+        <div class="font-display text-4xl text-yellow-400 leading-none mb-2"
+          style="font-family:'Fjalla One',sans-serif">7+</div>
         <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">Programming Languages</div>
       </div>
       <div class="bg-neutral-950 py-8 text-center hover:bg-neutral-900 transition-colors">
-        <div class="font-display text-4xl text-yellow-400 leading-none mb-2" style="font-family:'Fjalla One',sans-serif">3+</div>
+        <div class="font-display text-4xl text-yellow-400 leading-none mb-2"
+          style="font-family:'Fjalla One',sans-serif">3+</div>
         <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">Live Projects</div>
       </div>
       <div class="bg-neutral-950 py-8 text-center hover:bg-neutral-900 transition-colors">
-        <div class="font-display text-4xl text-yellow-400 leading-none mb-2" style="font-family:'Fjalla One',sans-serif">20+</div>
+        <div class="font-display text-4xl text-yellow-400 leading-none mb-2"
+          style="font-family:'Fjalla One',sans-serif">20+</div>
         <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">AI Tools Explored</div>
       </div>
     </div>
@@ -116,25 +230,41 @@
     </h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
       <a href="about.html" class="quick-card bg-neutral-900/60 rounded-2xl p-6 flex flex-col gap-3">
-        <span class="text-2xl text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#B89230"><path d="M440-280h80v-240h-80v240Zm68.5-331.5Q520-623 520-640t-11.5-28.5Q497-680 480-680t-28.5 11.5Q440-657 440-640t11.5 28.5Q463-600 480-600t28.5-11.5ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg></span>
+        <span class="text-2xl text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+            viewBox="0 -960 960 960" width="24px" fill="#B89230">
+            <path
+              d="M440-280h80v-240h-80v240Zm68.5-331.5Q520-623 520-640t-11.5-28.5Q497-680 480-680t-28.5 11.5Q440-657 440-640t11.5 28.5Q463-600 480-600t28.5-11.5ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+          </svg></span>
         <span class="font-bold text-white text-sm">About Me</span>
         <span class="font-mono text-[11px] text-neutral-500 leading-relaxed">Who I am, my story & what drives me</span>
         <span class="font-mono text-[10px] text-neutral-700 mt-auto">Ctrl + 2</span>
       </a>
       <a href="education.html" class="quick-card bg-neutral-900/60 rounded-2xl p-6 flex flex-col gap-3">
-        <span class="text-2xl text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#B89230"><path d="M270-80q-45 0-77.5-30.5T160-186v-558q0-38 23.5-68t61.5-38l395-78v640l-379 76q-9 2-15 9.5t-6 16.5q0 11 9 18.5t21 7.5h450v-640h80v720H270Zm90-233 200-39v-478l-200 39v478Zm-80 16v-478l-15 3q-11 2-18 9.5t-7 18.5v457q5-2 10.5-3.5T261-293l19-4Zm-40-472v482-482Z"/></svg></span>
+        <span class="text-2xl text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+            viewBox="0 -960 960 960" width="24px" fill="#B89230">
+            <path
+              d="M270-80q-45 0-77.5-30.5T160-186v-558q0-38 23.5-68t61.5-38l395-78v640l-379 76q-9 2-15 9.5t-6 16.5q0 11 9 18.5t21 7.5h450v-640h80v720H270Zm90-233 200-39v-478l-200 39v478Zm-80 16v-478l-15 3q-11 2-18 9.5t-7 18.5v457q5-2 10.5-3.5T261-293l19-4Zm-40-472v482-482Z" />
+          </svg></span>
         <span class="font-bold text-white text-sm">Education</span>
         <span class="font-mono text-[11px] text-neutral-500 leading-relaxed">IITJ, LST & my journey timeline</span>
         <span class="font-mono text-[10px] text-neutral-700 mt-auto">Ctrl + 3</span>
       </a>
       <a href="projects.html" class="quick-card bg-neutral-900/60 rounded-2xl p-6 flex flex-col gap-3">
-        <span class="text-2xl text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#B89230"><path d="M160-240v-480 520-40Zm0 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v200h-80v-200H447l-80-80H160v480h200v80H160ZM584-56 440-200l144-144 56 57-87 87 87 87-56 57Zm192 0-56-57 87-87-87-87 56-57 144 144L776-56Z"/></svg></span>
+        <span class="text-2xl text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+            viewBox="0 -960 960 960" width="24px" fill="#B89230">
+            <path
+              d="M160-240v-480 520-40Zm0 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v200h-80v-200H447l-80-80H160v480h200v80H160ZM584-56 440-200l144-144 56 57-87 87 87 87-56 57Zm192 0-56-57 87-87-87-87 56-57 144 144L776-56Z" />
+          </svg></span>
         <span class="font-bold text-white text-sm">Projects</span>
         <span class="font-mono text-[11px] text-neutral-500 leading-relaxed">Honey, PlayHub, Lexis & more</span>
         <span class="font-mono text-[10px] text-neutral-700 mt-auto">Ctrl + 4</span>
       </a>
       <a href="techstack.html" class="quick-card bg-neutral-900/60 rounded-2xl p-6 flex flex-col gap-3">
-        <span class="text-2xl text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#B89230"><path d="M480-400 40-640l440-240 440 240-440 240Zm0 160L63-467l84-46 333 182 333-182 84 46-417 227Zm0 160L63-307l84-46 333 182 333-182 84 46L480-80Zm0-411 273-149-273-149-273 149 273 149Zm0-149Z"/></svg></span>
+        <span class="text-2xl text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+            viewBox="0 -960 960 960" width="24px" fill="#B89230">
+            <path
+              d="M480-400 40-640l440-240 440 240-440 240Zm0 160L63-467l84-46 333 182 333-182 84 46-417 227Zm0 160L63-307l84-46 333 182 333-182 84 46L480-80Zm0-411 273-149-273-149-273 149 273 149Zm0-149Z" />
+          </svg></span>
         <span class="font-bold text-white text-sm">Tech Stack</span>
         <span class="font-mono text-[11px] text-neutral-500 leading-relaxed">Languages, tools & AI platforms</span>
         <span class="font-mono text-[10px] text-neutral-700 mt-auto">Ctrl + 5</span>
@@ -160,10 +290,10 @@
     <h2 class="mb-8" style="font-family:'Fjalla One',sans-serif;font-size:clamp(1.6rem,3.5vw,2.6rem)">
       GitHub <span class="text-yellow-400">Activity</span>
     </h2>
-  
+
     <!-- Contribution heatmap - GitHub Style -->
     <div class="bg-[#0d1117] border border-[#30363d] rounded-md p-6 hover:border-[#484f58] transition-colors">
-  
+
       <!-- Header -->
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-3">
@@ -184,14 +314,14 @@
           </svg>
         </a>
       </div>
-  
+
       <!-- Graph Container -->
       <div class="bg-[#161b22] rounded p-4 border border-[#21262d]">
         <img src="https://ghchart.rshah.org/39d353/broskell" alt="GitHub Contribution Chart" class="w-full h-auto"
           style="filter: brightness(1.1);"
           onerror="this.outerHTML='<div class=\'font-mono text-xs text-[#7d8590] text-center py-8\'>Contribution graph unavailable — <a href=\'https://github.com/broskell\' target=\'_blank\' class=\'text-[#39d353] hover:underline\'>view on GitHub</a></div>'">
       </div>
-  
+
       <!-- Legend -->
       <div class="flex items-center justify-between mt-4 px-1">
         <div class="flex items-center gap-4">
@@ -210,7 +340,7 @@
         </div>
       </div>
     </div>
-  
+
     <p class="font-mono text-[10px] text-[#484f58] text-center mt-4 tracking-wider">
       Live activity from github.com/broskell
     </p>
@@ -243,4 +373,5 @@
   <div id="bar-container"></div>
   <script src="shared.js"></script>
 </body>
+
 </html>
