@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,90 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
-    body{background:#000;color:#fff;font-family:'Syne',sans-serif;}
-    a{text-decoration:none;}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes goldPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,215,0,.3)}50%{box-shadow:0 0 0 8px rgba(255,215,0,0)}}
-    .anim{opacity:0;animation:fadeUp .6s ease forwards}
-    .d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}
-    .avatar-ring{animation:goldPulse 3s ease-in-out infinite}
-    .card-hover{transition:all .25s;border:1px solid #1a1a1a}
-    .card-hover:hover{border-color:#B8860B;background:rgba(255,215,0,0.03);transform:translateY(-4px)}
-    .name-img-sm{filter:drop-shadow(0 0 16px rgba(255,215,0,0.2))}
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes goldPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, .3)
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(255, 215, 0, 0)
+      }
+    }
+
+    .anim {
+      opacity: 0;
+      animation: fadeUp .6s ease forwards
+    }
+
+    .d1 {
+      animation-delay: .1s
+    }
+
+    .d2 {
+      animation-delay: .2s
+    }
+
+    .d3 {
+      animation-delay: .3s
+    }
+
+    .d4 {
+      animation-delay: .4s
+    }
+
+    .d5 {
+      animation-delay: .5s
+    }
+
+    .avatar-ring {
+      animation: goldPulse 3s ease-in-out infinite
+    }
+
+    .card-hover {
+      transition: all .25s;
+      border: 1px solid #1a1a1a
+    }
+
+    .card-hover:hover {
+      border-color: #B8860B;
+      background: rgba(255, 215, 0, 0.03);
+      transform: translateY(-4px)
+    }
+
+    .name-img-sm {
+      filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.2))
+    }
   </style>
 </head>
+
 <body class="bg-black text-white min-h-screen pt-16 pb-16">
   <div id="nav-container"></div>
 
@@ -35,24 +106,37 @@
       <!-- Left sticky -->
       <div class="anim d2 md:sticky top-20">
         <!-- Avatar -->
-        <div class="w-44 h-44 mx-auto mb-6 rounded-full p-[3px] avatar-ring" style="background:linear-gradient(135deg,#B8860B,transparent,#B8860B)">
+        <div class="w-44 h-44 mx-auto mb-6 rounded-full p-[3px] avatar-ring"
+          style="background:linear-gradient(135deg,#B8860B,transparent,#B8860B)">
           <div class="relative w-full h-full rounded-full bg-neutral-900 flex items-center justify-center">
             <span style="font-family:'Fjalla One',sans-serif;font-size:3rem;color:#FFD700">SK</span>
-            <img src="/assets/pfp.jpg" alt="Saathvik Kellampalli" class="absolute w-full h-full object-cover rounded-full overflow-hidden">
+            <img src="/assets/pfp.jpg" alt="Saathvik Kellampalli"
+              class="absolute w-full h-full object-cover rounded-full overflow-hidden">
           </div>
         </div>
         <!-- Name image small -->
         <div class="mb-4 px-2">
-          <img src="assets/name.jpeg" alt="Saathvik Kellampalli" class="name-img-sm w-full h-auto object-contain max-h-16">
+          <img src="assets/name.jpeg" alt="Saathvik Kellampalli"
+            class="name-img-sm w-full h-auto object-contain max-h-16">
         </div>
         <div class="flex justify-center mb-6">
-          <span class="font-mono text-[10px] tracking-[0.1em] text-yellow-600 bg-yellow-400/8 border border-yellow-800/40 px-4 py-1.5 rounded-full">UG @ IITJ × LST</span>
+          <span
+            class="font-mono text-[10px] tracking-[0.1em] text-yellow-600 bg-yellow-400/8 border border-yellow-800/40 px-4 py-1.5 rounded-full">UG
+            @ IITJ × LST</span>
         </div>
         <div class="flex flex-col gap-2">
-          <a href="education.html" class="flex items-center gap-2 font-mono text-xs text-neutral-500 py-2 border-b border-neutral-900 hover:text-white transition-colors"><span class="text-yellow-700">▹</span> Education Timeline</a>
-          <a href="projects.html" class="flex items-center gap-2 font-mono text-xs text-neutral-500 py-2 border-b border-neutral-900 hover:text-white transition-colors"><span class="text-yellow-700">▹</span> My Projects</a>
-          <a href="techstack.html" class="flex items-center gap-2 font-mono text-xs text-neutral-500 py-2 border-b border-neutral-900 hover:text-white transition-colors"><span class="text-yellow-700">▹</span> Tech Stack</a>
-          <a href="contact.html" class="flex items-center gap-2 font-mono text-xs text-neutral-500 py-2 hover:text-white transition-colors"><span class="text-yellow-700">▹</span> Get In Touch</a>
+          <a href="education.html"
+            class="flex items-center gap-2 font-mono text-xs text-neutral-500 py-2 border-b border-neutral-900 hover:text-white transition-colors"><span
+              class="text-yellow-700">▹</span> Education Timeline</a>
+          <a href="projects.html"
+            class="flex items-center gap-2 font-mono text-xs text-neutral-500 py-2 border-b border-neutral-900 hover:text-white transition-colors"><span
+              class="text-yellow-700">▹</span> My Projects</a>
+          <a href="techstack.html"
+            class="flex items-center gap-2 font-mono text-xs text-neutral-500 py-2 border-b border-neutral-900 hover:text-white transition-colors"><span
+              class="text-yellow-700">▹</span> Tech Stack</a>
+          <a href="contact.html"
+            class="flex items-center gap-2 font-mono text-xs text-neutral-500 py-2 hover:text-white transition-colors"><span
+              class="text-yellow-700">▹</span> Get In Touch</a>
         </div>
       </div>
 
@@ -68,8 +152,7 @@
           <p class="text-neutral-400 leading-relaxed text-base mb-4">
             My journey into technology started with curiosity for how things work — from algorithms to
             operating systems to web applications. During my pre-college gap, I dived headfirst into online
-            certifications and never looked back. Now I'm building real products, exploring AI tools, and
-            earning a 9.75 CGPA in my first semester.
+            certifications and never looked back. Now I'm building real products, exploring AI tools.
           </p>
           <p class="text-neutral-400 leading-relaxed text-base">
             I believe in <strong class="text-white">learning by building</strong>. Every project teaches me
@@ -79,25 +162,32 @@
         </div>
 
         <!-- Interests -->
-        <p class="anim d3 font-mono text-[10px] tracking-[0.2em] text-neutral-500 uppercase mb-4">Interests & Passions</p>
+        <p class="anim d3 font-mono text-[10px] tracking-[0.2em] text-neutral-500 uppercase mb-4">Interests & Passions
+        </p>
         <div class="anim d4 grid grid-cols-3 sm:grid-cols-6 gap-3 mb-10">
           <div class="card-hover bg-neutral-900 rounded-xl p-4 text-center">
-            <div class="text-2xl mb-2"><span class="material-symbols-outlined">robot_2</span></div><div class="font-bold text-neutral-300 text-[11px]">AI</div>
+            <div class="text-2xl mb-2"><span class="material-symbols-outlined">robot_2</span></div>
+            <div class="font-bold text-neutral-300 text-[11px]">AI</div>
           </div>
           <div class="card-hover bg-neutral-900 rounded-xl p-4 text-center">
-            <div class="text-2xl mb-2"><span class="material-symbols-outlined">language</span></div><div class="font-bold text-neutral-300 text-[11px]">Web Dev</div>
+            <div class="text-2xl mb-2"><span class="material-symbols-outlined">language</span></div>
+            <div class="font-bold text-neutral-300 text-[11px]">Web Dev</div>
           </div>
           <div class="card-hover bg-neutral-900 rounded-xl p-4 text-center">
-            <div class="text-2xl mb-2">🐧</div><div class="font-bold text-neutral-300 text-[11px]">Linux</div>
+            <div class="mb-2 flex justify-center text-neutral-300"><svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 256 256"><path fill="currentColor" d="M229 214.25a8 8 0 0 1-11.24-1.25C216.39 211.27 184 169.86 184 88a56 56 0 0 0-112 0c0 81.86-32.37 123.27-33.75 125a8 8 0 0 1-12.51-10c.15-.2 7.69-9.9 15.13-28.74C47.77 156.8 56 127.64 56 88a72 72 0 0 1 144 0c0 39.64 8.23 68.8 15.13 86.28c7.48 18.94 15.06 28.64 15.14 28.74a8 8 0 0 1-1.27 11.23M100 88a12 12 0 1 0 12 12a12 12 0 0 0-12-12m68 12a12 12 0 1 0-12 12a12 12 0 0 0 12-12m-68.42 28.84a8 8 0 0 0-7.15 14.31l32 16a7.94 7.94 0 0 0 7.15 0l32-16a8 8 0 0 0-7.16-14.31L128 143.05ZM128 176a54.07 54.07 0 0 0-47 28.11a8 8 0 1 0 14 7.78a37.35 37.35 0 0 1 66 0a8 8 0 0 0 14-7.78A54.07 54.07 0 0 0 128 176"/></svg></div>
+            <div class="font-bold text-neutral-300 text-[11px]">Linux</div>
           </div>
           <div class="card-hover bg-neutral-900 rounded-xl p-4 text-center">
-            <div class="text-2xl mb-2"><span class="material-symbols-outlined">lock</span></div><div class="font-bold text-neutral-300 text-[11px]">Security</div>
+            <div class="text-2xl mb-2"><span class="material-symbols-outlined">lock</span></div>
+            <div class="font-bold text-neutral-300 text-[11px]">Security</div>
           </div>
           <div class="card-hover bg-neutral-900 rounded-xl p-4 text-center">
-            <div class="text-2xl mb-2"><span class="material-symbols-outlined">bar_chart</span></div><div class="font-bold text-neutral-300 text-[11px]">Data Sci</div>
+            <div class="text-2xl mb-2"><span class="material-symbols-outlined">bar_chart</span></div>
+            <div class="font-bold text-neutral-300 text-[11px]">Data Sci</div>
           </div>
           <div class="card-hover bg-neutral-900 rounded-xl p-4 text-center">
-            <div class="text-2xl mb-2"><span class="material-symbols-outlined">build</span></div><div class="font-bold text-neutral-300 text-[11px]">Open Source</div>
+            <div class="text-2xl mb-2"><span class="material-symbols-outlined">build</span></div>
+            <div class="font-bold text-neutral-300 text-[11px]">Open Source</div>
           </div>
         </div>
 
@@ -106,28 +196,41 @@
         <ul class="anim d4 mb-10">
           <li class="flex gap-4 items-start py-5 border-b border-neutral-900">
             <span style="font-family:'Fjalla One',sans-serif;font-size:1.5rem;color:#252525;min-width:32px">01</span>
-            <div><h4 class="font-bold text-white text-sm mb-1">Build First, Overthink Later</h4>
-            <p class="font-mono text-xs text-neutral-500 leading-relaxed">I learn best when I'm creating. Shipping a rough prototype beats planning forever.</p></div>
+            <div>
+              <h4 class="font-bold text-white text-sm mb-1">Build First, Overthink Later</h4>
+              <p class="font-mono text-xs text-neutral-500 leading-relaxed">I learn best when I'm creating. Shipping a
+                rough prototype beats planning forever.</p>
+            </div>
           </li>
           <li class="flex gap-4 items-start py-5 border-b border-neutral-900">
             <span style="font-family:'Fjalla One',sans-serif;font-size:1.5rem;color:#252525;min-width:32px">02</span>
-            <div><h4 class="font-bold text-white text-sm mb-1">Curiosity as a Skill</h4>
-            <p class="font-mono text-xs text-neutral-500 leading-relaxed">I actively explore new tools, frameworks, and ideas — from OWASP Juice Shop to Suno AI.</p></div>
+            <div>
+              <h4 class="font-bold text-white text-sm mb-1">Curiosity as a Skill</h4>
+              <p class="font-mono text-xs text-neutral-500 leading-relaxed">I actively explore new tools, frameworks,
+                and ideas — from OWASP Juice Shop to Suno AI.</p>
+            </div>
           </li>
           <li class="flex gap-4 items-start py-5 border-b border-neutral-900">
             <span style="font-family:'Fjalla One',sans-serif;font-size:1.5rem;color:#252525;min-width:32px">03</span>
-            <div><h4 class="font-bold text-white text-sm mb-1">Quality over Quantity</h4>
-            <p class="font-mono text-xs text-neutral-500 leading-relaxed">A well-crafted solution that solves a real problem is worth more than ten half-baked ones.</p></div>
+            <div>
+              <h4 class="font-bold text-white text-sm mb-1">Quality over Quantity</h4>
+              <p class="font-mono text-xs text-neutral-500 leading-relaxed">A well-crafted solution that solves a real
+                problem is worth more than ten half-baked ones.</p>
+            </div>
           </li>
           <li class="flex gap-4 items-start py-5">
             <span style="font-family:'Fjalla One',sans-serif;font-size:1.5rem;color:#252525;min-width:32px">04</span>
-            <div><h4 class="font-bold text-white text-sm mb-1">Consistency Compounds</h4>
-            <p class="font-mono text-xs text-neutral-500 leading-relaxed">Daily progress — even small — is how I've gone from zero to 9.75 CGPA and three deployed apps.</p></div>
+            <div>
+              <h4 class="font-bold text-white text-sm mb-1">Consistency Compounds</h4>
+              <p class="font-mono text-xs text-neutral-500 leading-relaxed">Daily progress — even small — is how I've
+                gone from zero to 9.75 CGPA and three deployed apps.</p>
+            </div>
           </li>
         </ul>
 
         <!-- Quote card -->
-        <div class="anim d5 bg-yellow-400/4 border border-yellow-800/30 rounded-2xl p-6 hover:border-yellow-700/50 transition-colors">
+        <div
+          class="anim d5 bg-yellow-400/4 border border-yellow-800/30 rounded-2xl p-6 hover:border-yellow-700/50 transition-colors">
           <p class="font-mono text-sm text-yellow-600/80 leading-relaxed italic">
             "Driven by curiosity and a passion for technology, I actively seek out new knowledge
             and hands-on experience with AI, open-source systems, and modern web frameworks to
@@ -141,4 +244,5 @@
   <div id="bar-container"></div>
   <script src="shared.js"></script>
 </body>
+
 </html>
