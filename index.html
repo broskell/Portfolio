@@ -397,6 +397,25 @@
 
   <div id="bar-container"></div>
   <script src="shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const introAudio = new Audio('assets/billie_jean_preview.mp3');
+      introAudio.loop = false;
+      
+      introAudio.play().catch(err => {
+        const playOnInteract = () => {
+          introAudio.play().catch(e => {});
+          document.removeEventListener('click', playOnInteract);
+          document.removeEventListener('keydown', playOnInteract);
+          document.removeEventListener('touchstart', playOnInteract);
+        };
+        
+        document.addEventListener('click', playOnInteract);
+        document.addEventListener('keydown', playOnInteract);
+        document.addEventListener('touchstart', playOnInteract);
+      });
+    });
+  </script>
 </body>
 
 </html>
