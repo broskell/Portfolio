@@ -140,7 +140,7 @@
 
   <!-- HERO -->
   <section
-    class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16 pb-20 relative overflow-hidden">
+    class="min-h-screen flex flex-col items-center text-center px-6 pt-16 pb-24 md:pb-20 relative overflow-hidden">
     <!-- bg glow -->
     <div class="absolute inset-0 pointer-events-none"
       style="background:radial-gradient(ellipse 60% 40% at 50% 65%,rgba(255,215,0,0.06) 0%,transparent 70%)"></div>
@@ -149,7 +149,10 @@
       style="background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px">
     </div>
 
-    <div class="relative z-10 flex flex-col items-center">
+    <!-- Top Spacer for vertical centering -->
+    <div class="flex-grow w-full"></div>
+
+    <div class="relative z-10 flex flex-col items-center shrink-0 mt-8 sm:mt-0">
       <p class="anim-1 font-mono text-neutral-500 text-xs mb-10">Hello, I'm</p>
 
       <!-- NAME VIDEO -->
@@ -219,10 +222,12 @@
       </div>
     </div>
 
-    <!-- scroll cue -->
-    <div class="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-      <div class="scroll-line w-px h-14" style="background:linear-gradient(to bottom,#B8860B,transparent)"></div>
-      <span class="font-mono text-[10px] tracking-[0.2em] text-neutral-600">scroll</span>
+    <!-- scroll cue (pushed to bottom) -->
+    <div class="flex-grow w-full flex flex-col justify-end items-center mt-12 md:mt-16 z-10 opacity-70 md:opacity-100">
+      <div class="flex flex-col items-center gap-2">
+        <div class="scroll-line w-px h-10 md:h-14" style="background:linear-gradient(to bottom,#B8860B,transparent)"></div>
+        <span class="font-mono text-[10px] tracking-[0.2em] text-neutral-600">scroll</span>
+      </div>
     </div>
   </section>
 
