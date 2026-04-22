@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saathvik Kellampalli</title>
+  <title>Jaswanth L K - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -132,6 +132,24 @@
       color: #E6BE8A;
       background: rgba(255, 215, 0, 0.05)
     }
+
+    /* Fix: gradient text clipping on descenders/ascenders */
+    .hero-name {
+      display: inline-block;
+      background: linear-gradient(to right, #ffffff, #fef08a, #ca8a04);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      /* Extra vertical padding so gradient bg isn't clipped */
+      padding: 0.1em 0.05em 0.15em;
+      line-height: 1.15;
+      filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+      transition: filter 0.5s;
+    }
+
+    .hero-name:hover {
+      filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.6));
+    }
   </style>
 </head>
 
@@ -155,24 +173,19 @@
     <div class="relative z-10 flex flex-col items-center shrink-0 mt-8 sm:mt-0">
       <p class="anim-1 font-mono text-neutral-500 text-xs mb-10">Hello, I'm</p>
 
-      <!-- NAME VIDEO -->
-      <div class="anim-2 mb-8 w-full max-w-3xl px-4 flex justify-center">
-        <div class="relative w-full max-w-[650px] overflow-hidden" style="aspect-ratio: 16 / 8;">
-          <video autoplay muted playsinline
-            class="absolute top-0 left-0 w-full h-[125%] object-cover object-top mix-blend-screen pointer-events-none">
-            <source src="assets/Cinematic_Text_Animation_Video_Generation.mp4" type="video/mp4">
-          </video>
-        </div>
+      <!-- NAME HEADER — fixed: use custom class to prevent bg-clip clipping -->
+      <div class="anim-2 mb-10 w-full px-4 flex justify-center my-[100px]">
+        <h1 class="text-6xl md:text-8xl font-display font-bold tracking-tighter hero-name">Jaswanth L K</h1>
       </div>
 
       <p class="anim-3 text-neutral-400 text-sm mt-5 mb-6 font-semibold tracking-wide">
-        <span class="text-yellow-400/80">BS Applied AI & DS</span> &nbsp;|&nbsp; IIT Jodhpur &nbsp;|&nbsp; LeapStart
-        School of Technology
+        <span class="text-yellow-400/80">Senior Data Scientist</span> &nbsp;|&nbsp; Machine Learning & MLOps Specialist
+        &nbsp;|&nbsp; AWS & Databricks Certified
       </p>
 
       <div class="anim-4 border-l-2 border-yellow-700/60 pl-5 text-left mb-10 max-w-md">
         <p class="font-mono text-neutral-400 text-sm leading-relaxed">
-          Building strong foundations in technology<br>to shape a smarter future.
+          Building end-to-end machine learning systems<br>to create measurable impact in the real world.
         </p>
       </div>
 
@@ -189,18 +202,7 @@
       </div>
 
       <div class="anim-6 flex gap-10">
-        <a href="https://github.com/broskell" target="_blank" aria-label="GitHub"
-          class="text-neutral-400 hover:text-yellow-400 hover:scale-110 transition-all duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-github" aria-hidden="true">
-            <path
-              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
-            </path>
-            <path d="M9 18c-4.51 2-5-2-7-2"></path>
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/kellampalli-saathvik-354799360/" target="_blank" aria-label="LinkedIn"
+        <a href="https://linkedin.com/in/jaswanthlk-ds" target="_blank" aria-label="LinkedIn"
           class="text-neutral-400 hover:text-yellow-400 hover:scale-110 transition-all duration-300">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -225,7 +227,8 @@
     <!-- scroll cue (pushed to bottom) -->
     <div class="flex-grow w-full flex flex-col justify-end items-center mt-12 md:mt-16 z-10 opacity-70 md:opacity-100">
       <div class="flex flex-col items-center gap-2">
-        <div class="scroll-line w-px h-10 md:h-14" style="background:linear-gradient(to bottom,#B8860B,transparent)"></div>
+        <div class="scroll-line w-px h-10 md:h-14" style="background:linear-gradient(to bottom,#B8860B,transparent)">
+        </div>
         <span class="font-mono text-[10px] tracking-[0.2em] text-neutral-600">scroll</span>
       </div>
     </div>
@@ -236,18 +239,18 @@
     <div class="grid grid-cols-3 border border-neutral-900 rounded-2xl overflow-hidden divide-x divide-neutral-900">
       <div class="bg-neutral-950 py-8 text-center hover:bg-neutral-900 transition-colors">
         <div class="font-display text-4xl text-yellow-400 leading-none mb-2"
-          style="font-family:'Fjalla One',sans-serif">7+</div>
-        <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">Programming Languages</div>
+          style="font-family:'Fjalla One',sans-serif">5+</div>
+        <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">Years of Experience</div>
       </div>
       <div class="bg-neutral-950 py-8 text-center hover:bg-neutral-900 transition-colors">
         <div class="font-display text-4xl text-yellow-400 leading-none mb-2"
-          style="font-family:'Fjalla One',sans-serif">3+</div>
-        <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">Live Projects</div>
+          style="font-family:'Fjalla One',sans-serif">620+</div>
+        <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">Leetcode Solved</div>
       </div>
       <div class="bg-neutral-950 py-8 text-center hover:bg-neutral-900 transition-colors">
         <div class="font-display text-4xl text-yellow-400 leading-none mb-2"
-          style="font-family:'Fjalla One',sans-serif">20+</div>
-        <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">AI Tools Explored</div>
+          style="font-family:'Fjalla One',sans-serif">6+</div>
+        <div class="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">Certifications</div>
       </div>
     </div>
   </section>
@@ -314,68 +317,6 @@
     </div>
   </section>
 
-  <!-- GITHUB GRAPH -->
-  <section class="max-w-5xl mx-auto px-6 pb-20">
-    <p class="font-mono text-[10px] tracking-[0.25em] text-neutral-500 uppercase mb-2">Open Source</p>
-    <h2 class="mb-8" style="font-family:'Fjalla One',sans-serif;font-size:clamp(1.6rem,3.5vw,2.6rem)">
-      GitHub <span class="text-yellow-400">Activity</span>
-    </h2>
-
-    <!-- Contribution heatmap - GitHub Style -->
-    <div class="bg-[#0d1117] border border-[#30363d] rounded-md p-6 hover:border-[#484f58] transition-colors">
-
-      <!-- Header -->
-      <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center gap-3">
-          <!-- GitHub Icon -->
-          <svg class="w-5 h-5 text-[#7d8590]" fill="currentColor" viewBox="0 0 16 16">
-            <path
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-          </svg>
-          <span class="font-mono text-sm text-[#e6edf3]">broskell</span>
-          <span class="font-mono text-xs text-[#7d8590]">contributions in the last year</span>
-        </div>
-        <a href="https://github.com/broskell" target="_blank"
-          class="font-mono text-xs text-[#B8860B] hover:underline transition-colors flex items-center gap-1">
-          View on GitHub
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        </a>
-      </div>
-
-      <!-- Graph Container -->
-      <div class="bg-[#161b22] rounded p-4 border border-[#21262d]">
-        <img src="https://ghchart.rshah.org/39d353/broskell" alt="GitHub Contribution Chart" class="w-full h-auto"
-          style="filter: brightness(1.1);"
-          onerror="this.outerHTML='<div class=\'font-mono text-xs text-[#7d8590] text-center py-8\'>Contribution graph unavailable — <a href=\'https://github.com/broskell\' target=\'_blank\' class=\'text-[#39d353] hover:underline\'>view on GitHub</a></div>'">
-      </div>
-
-      <!-- Legend -->
-      <div class="flex items-center justify-between mt-4 px-1">
-        <div class="flex items-center gap-4">
-          <span class="font-mono text-xs text-[#7d8590]">Learn how we count contributions</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="font-mono text-[10px] text-[#7d8590]">Less</span>
-          <div class="flex items-center gap-[3px]">
-            <span class="w-[10px] h-[10px] rounded-sm bg-[#161b22] border border-[#1b1f23]"></span>
-            <span class="w-[10px] h-[10px] rounded-sm bg-[#0e4429]"></span>
-            <span class="w-[10px] h-[10px] rounded-sm bg-[#006d32]"></span>
-            <span class="w-[10px] h-[10px] rounded-sm bg-[#26a641]"></span>
-            <span class="w-[10px] h-[10px] rounded-sm bg-[#39d353]"></span>
-          </div>
-          <span class="font-mono text-[10px] text-[#7d8590]">More</span>
-        </div>
-      </div>
-    </div>
-
-    <p class="font-mono text-[10px] text-[#484f58] text-center mt-4 tracking-wider">
-      Live activity from github.com/broskell
-    </p>
-  </section>
-
   <!-- CODE WINDOW -->
   <section class="max-w-3xl mx-auto px-6 pb-28">
     <div class="code-win bg-neutral-950 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
@@ -386,14 +327,14 @@
         <span class="font-mono text-xs text-neutral-500 ml-3">profile.js</span>
       </div>
       <pre class="p-7 font-mono text-sm leading-relaxed text-neutral-500 overflow-x-auto"><span class="text-neutral-300">const</span> profile = {
-  <span class="text-neutral-400">name</span>:        <span class="text-neutral-200">'Saathvik Kellampalli'</span>,
-  <span class="text-neutral-400">role</span>:        <span class="text-neutral-200">'Student · Tech Enthusiast · Builder'</span>,
-  <span class="text-neutral-400">education</span>:  [<span class="text-neutral-200">'IIT Jodhpur'</span>, <span class="text-neutral-200">'LeapStart School of Technology'</span>],
-  <span class="text-neutral-400">skills</span>:     [<span class="text-neutral-200">'Python'</span>, <span class="text-neutral-200">'JavaScript'</span>, <span class="text-neutral-200">'PostgreSQL'</span>, <span class="text-neutral-200">'Linux'</span>, <span class="text-neutral-200">'TailwindCSS'</span>],
-  <span class="text-neutral-400">hardWorker</span>:  <span class="text-white">true</span>,
-  <span class="text-neutral-400">quickLearner</span>:<span class="text-white">true</span>,
-  <span class="text-neutral-400">hireable</span>:   <span class="text-neutral-300">function</span>() {
-    <span class="text-white">return</span> <span class="text-neutral-300">this</span>.<span class="text-neutral-400">hardWorker</span> &amp;&amp; <span class="text-neutral-300">this</span>.<span class="text-neutral-400">skills</span>.length &gt;= <span class="text-neutral-200">5</span>;
+  <span class="text-neutral-400">name</span>:        <span class="text-neutral-200">'Jaswanth L K'</span>,
+  <span class="text-neutral-400">role</span>:        <span class="text-neutral-200">'Senior Data Scientist'</span>,
+  <span class="text-neutral-400">education</span>:  [<span class="text-neutral-200">'MS in Data Science, Sacred Heart University'</span>],
+  <span class="text-neutral-400">skills</span>:     [<span class="text-neutral-200">'Python'</span>, <span class="text-neutral-200">'PyTorch'</span>, <span class="text-neutral-200">'Spark'</span>, <span class="text-neutral-200">'AWS'</span>, <span class="text-neutral-200">'MLflow'</span>],
+  <span class="text-neutral-400">impactDriven</span>: <span class="text-white">true</span>,
+  <span class="text-neutral-400">mlOpsGuru</span>:   <span class="text-white">true</span>,
+  <span class="text-neutral-400">deliverValue</span>: <span class="text-neutral-300">function</span>() {
+    <span class="text-white">return</span> <span class="text-neutral-200">"End-to-End ML Systems at Scale"</span>;
   }
 };</pre>
     </div>
@@ -401,25 +342,6 @@
 
   <div id="bar-container"></div>
   <script src="shared.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const introAudio = new Audio('assets/billie_jean_preview.mp3');
-      introAudio.loop = false;
-      
-      introAudio.play().catch(err => {
-        const playOnInteract = () => {
-          introAudio.play().catch(e => {});
-          document.removeEventListener('click', playOnInteract);
-          document.removeEventListener('keydown', playOnInteract);
-          document.removeEventListener('touchstart', playOnInteract);
-        };
-        
-        document.addEventListener('click', playOnInteract);
-        document.addEventListener('keydown', playOnInteract);
-        document.addEventListener('touchstart', playOnInteract);
-      });
-    });
-  </script>
 </body>
 
 </html>

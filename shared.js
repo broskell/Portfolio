@@ -15,7 +15,7 @@ function buildNav() {
 
   const navHTML = `
   <nav class="fixed top-0 left-0 right-0 h-16 z-50 bg-black/90 backdrop-blur-md border-b border-neutral-900 flex items-center px-6 gap-8">
-    <div class="font-mono text-yellow-400 text-xl tracking-widest font-bold shrink-0">SK</div>
+    <div class="font-mono text-yellow-400 text-xl tracking-widest font-bold shrink-0">JK</div>
     <div class="hidden md:flex items-center gap-1 flex-1 justify-center">
       ${pages.map(p => `
         <a href="${p.href}" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide border transition-all duration-200 no-underline
