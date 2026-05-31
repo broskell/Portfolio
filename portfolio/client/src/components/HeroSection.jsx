@@ -3,7 +3,7 @@ import { RESUME_URL } from '../config/nav'
 
 export default function HeroSection() {
   return (
-    <section className="hero relative min-h-[100svh] flex flex-col overflow-hidden">
+    <section className="hero relative min-h-[100svh] flex flex-col overflow-hidden justify-between">
       <div className="hero-vignette pointer-events-none" aria-hidden="true" />
       <div className="hero-spotlight pointer-events-none" aria-hidden="true" />
       <div className="hero-grid pointer-events-none" aria-hidden="true" />
@@ -14,47 +14,50 @@ export default function HeroSection() {
       <div className="hero-corner hero-corner-bl pointer-events-none" aria-hidden="true" />
       <div className="hero-corner hero-corner-br pointer-events-none" aria-hidden="true" />
 
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-5 sm:px-8 pt-24 pb-6 max-w-5xl mx-auto w-full">
-        <div className="anim-1 hero-intro flex items-center gap-4 w-full max-w-lg mb-8">
-          <span className="hero-intro-line flex-1" />
-          <span className="font-mono text-[10px] sm:text-xs tracking-[0.4em] text-neutral-500 uppercase shrink-0">
-            Hello, I&apos;m
-          </span>
-          <span className="hero-intro-line flex-1" />
-        </div>
+      <div className="relative z-10 flex-1 flex flex-col lg:grid lg:grid-cols-[1.35fr_0.9fr] items-center justify-center gap-8 lg:gap-14 px-6 sm:px-12 pt-28 pb-8 max-w-6xl mx-auto w-full">
+        {/* Left Side: Hello + Name Video */}
+        <div className="flex flex-col w-full text-center lg:text-left">
+          <div className="anim-1 hero-intro flex items-center justify-center lg:justify-start gap-4 w-full mb-6">
+            <span className="font-sans text-md sm:text-md text-neutral-400 leading-none italic tracking-wider shrink-0">
+              Hello, I&apos;m
+            </span>
+            <span className="hero-intro-line flex-1" />
+          </div>
 
-        <div className="anim-2 hero-stage w-full max-w-[780px]">
-          <div className="hero-stage-inner">
-            <video
-              autoPlay
-              muted
-              playsInline
-              loop
-              className="hero-name-video"
-              aria-label="Saathvik Kellampalli"
-            >
-              <source src="/assets/Cinematic_Text_Animation_Video_Generation.mp4" type="video/mp4" />
-            </video>
-            <div className="hero-stage-fade" aria-hidden="true" />
+          <div className="anim-2 hero-stage w-full">
+            <div className="hero-stage-inner">
+              <video
+                autoPlay
+                muted
+                playsInline
+                className="hero-name-video"
+                aria-label="Saathvik Kellampalli"
+              >
+                <source src="/assets/Cinematic_Text_Animation_Video_Generation.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
 
-        <div className="anim-3 hero-dock w-full max-w-2xl">
-          <div className="hero-dock-inner">
-            <p className="hero-credentials">
-              <span className="hero-credentials-highlight">BS Applied AI &amp; DS</span>
-              <span className="hero-credentials-sep" aria-hidden="true" />
-              <span>IIT Jodhpur</span>
-              <span className="hero-credentials-sep" aria-hidden="true" />
-              <span>LeapStart School of Technology</span>
-            </p>
+        {/* Right Side: Credentials & Actions (Borderless timeline dashboard) */}
+        <div className="anim-3 hero-dock w-full lg:mt-0">
+          <div className="hero-dock-inner text-center lg:text-left">
 
-            <blockquote className="hero-quote">
-              <span className="hero-quote-bar" aria-hidden="true" />
+            <div className="space-y-5 font-body text-[13px] text-neutral-300 mb-8 border-l border-neutral-800 pl-4 text-left">
+              <div>
+                <span className="text-lg font-bold italic text-yellow-400 block leading-snug">BS Applied AI &amp; DS</span>
+                <span className="block text-[11px] text-neutral-500 mt-0.5 font-mono">IIT Jodhpur · 2025–2029</span>
+              </div>
+              <div>
+                <span className="text-lg font-bold italic text-white block leading-snug">Experiential Learning</span>
+                <span className="block text-[11px] text-neutral-500 mt-0.5 font-mono">LeapStart School of Technology</span>
+              </div>
+            </div>
+
+            <blockquote className="hero-quote mb-8 text-left border-l-2 border-yellow-500/40 pl-4 py-0.5">
               <span>
                 Building strong foundations in technology
                 <br className="hidden sm:block" />
-                <span className="sm:hidden"> </span>
                 to shape a smarter future.
               </span>
             </blockquote>
@@ -65,16 +68,16 @@ export default function HeroSection() {
                 Download CV
               </a>
               <Link to="/projects" className="hero-btn hero-btn-gold">
-                View Projects
+                Projects
                 <span className="hero-btn-arrow">→</span>
               </Link>
-              <Link to="/terminal" className="hero-btn hero-btn-ghost">
-                <span className="text-yellow-500/90 font-mono">&gt;_</span>
+              <Link to="/terminal" className="hero-btn hero-btn-ghost col-span-2 group">
+                <span className="text-yellow-500/90 font-mono transition-transform duration-300 group-hover:translate-x-1">&gt;_</span>
                 Terminal
               </Link>
             </div>
 
-            <div className="hero-dock-footer">
+            <div className="hero-dock-footer justify-center lg:justify-start">
               <div className="anim-5 hero-social">
                 <a href="https://github.com/broskell" target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label="GitHub">
                   <GitHubIcon />

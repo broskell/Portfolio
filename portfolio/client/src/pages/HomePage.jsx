@@ -35,14 +35,14 @@ export default function HomePage() {
 
       {/* STATS */}
       <section className="max-w-4xl mx-auto px-6 pb-20">
-        <div className="grid grid-cols-3 border border-neutral-900 rounded-2xl overflow-hidden divide-x divide-neutral-900">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             ['7+', 'Programming Languages'],
             ['3+', 'Live Projects'],
             ['30+', 'AI Tools Explored'],
           ].map(([val, label]) => (
-            <div key={label} className="bg-neutral-950 py-8 text-center hover:bg-neutral-900 transition-colors">
-              <div className="text-4xl text-yellow-400 leading-none mb-2" style={fjalla}>{val}</div>
+            <div key={label} className="bg-neutral-950/65 border border-neutral-900/80 rounded-2xl py-8 text-center backdrop-blur-md hover:border-yellow-500/25 hover:shadow-[0_15px_30px_rgba(0,0,0,0.6),0_0_20px_rgba(255,215,0,0.03)] hover:-translate-y-1 transition-all duration-300">
+              <div className="text-4xl text-yellow-400 leading-none mb-2 font-bold tracking-wide" style={{ ...fjalla, textShadow: '0 0 15px rgba(255, 215, 0, 0.15)' }}>{val}</div>
               <div className="font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">{label}</div>
             </div>
           ))}
@@ -55,13 +55,17 @@ export default function HomePage() {
         <h2 className="mb-8 text-white" style={{ ...fjalla, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
           Explore My <span className="text-yellow-400">Portfolio</span>
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {QUICK_NAV.map((item) => (
-            <Link key={item.path} to={item.path} className="quick-card bg-neutral-900/60 rounded-2xl p-6 flex flex-col gap-3 no-underline">
-              <QuickNavIcon type={item.icon} />
-              <span className="font-bold text-white text-sm">{item.label}</span>
+            <Link key={item.path} to={item.path} className="quick-card bg-neutral-950/45 border border-neutral-900/80 backdrop-blur-md rounded-2xl p-6 flex flex-col gap-3 no-underline transition-all duration-300 hover:border-yellow-500/35 hover:-translate-y-1.5 hover:shadow-[0_15px_30px_rgba(0,0,0,0.6),0_0_20px_rgba(255,215,0,0.03)]">
+              <div className="transition-transform duration-300 hover:scale-115 w-fit">
+                <QuickNavIcon type={item.icon} />
+              </div>
+              <span className="font-bold text-white text-sm tracking-wide">{item.label}</span>
               <span className="font-mono text-[11px] text-neutral-500 leading-relaxed">{item.desc}</span>
-              <span className="font-mono text-[10px] text-neutral-700 mt-auto">Ctrl + {item.key}</span>
+              <span className="font-mono text-[10px] text-neutral-600 bg-neutral-900 border border-neutral-800 rounded px-2.5 py-0.5 w-fit mt-auto">
+                Ctrl + {item.key}
+              </span>
             </Link>
           ))}
         </div>
