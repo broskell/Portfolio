@@ -38,7 +38,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             ['7+', 'Programming Languages'],
-            ['3+', 'Live Projects'],
+            ['6+', 'Live Projects'],
             ['30+', 'AI Tools Explored'],
           ].map(([val, label]) => (
             <div key={label} className="bg-neutral-950/65 border border-neutral-900/80 rounded-2xl py-8 text-center backdrop-blur-md hover:border-yellow-500/25 hover:shadow-[0_15px_30px_rgba(0,0,0,0.6),0_0_20px_rgba(255,215,0,0.03)] hover:-translate-y-1 transition-all duration-300">

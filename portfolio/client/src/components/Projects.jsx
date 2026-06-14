@@ -18,7 +18,7 @@ function ProjectSkeleton() {
 
 function ProjectCard({ project, index, inView }) {
   const isFlagship = project.order === 0
-  const isWide = isFlagship || project.order === 3
+  const isWide = isFlagship || project.order === 3 || project.order === 6
 
   return (
     <motion.article

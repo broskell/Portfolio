@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 
 const STATS = [
   { value: '7+', label: 'Programming Languages' },
-  { value: '3+', label: 'Live Projects' },
+  { value: '6+', label: 'Live Projects' },
   { value: '30+', label: 'AI Tools Explored' },
 ]
 

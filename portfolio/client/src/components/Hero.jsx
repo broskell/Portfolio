@@ -51,10 +51,11 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 mb-8">
               <a
                 href="/assets/Saathvik_Kellampalli_Resume (1).pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-black font-bold text-xs px-5 py-2.5 rounded-lg hover:bg-gold transition-colors duration-300"
               >
-                ↓ Download CV
+                ↗ View CV
               </a>
               <a
                 href="#projects"

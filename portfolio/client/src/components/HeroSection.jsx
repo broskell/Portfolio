@@ -63,9 +63,9 @@ export default function HeroSection() {
             </blockquote>
 
             <div className="anim-4 hero-actions">
-              <a href={RESUME_URL} download="Saathvik_Kellampalli_Resume.pdf" className="hero-btn hero-btn-primary">
-                <span className="hero-btn-icon">↓</span>
-                Download CV
+              <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="hero-btn hero-btn-primary">
+                <span className="hero-btn-icon">↗</span>
+                View Resume
               </a>
               <Link to="/projects" className="hero-btn hero-btn-gold">
                 Projects

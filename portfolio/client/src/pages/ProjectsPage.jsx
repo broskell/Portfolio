@@ -77,6 +77,96 @@ export default function ProjectsPage() {
           </div>
         </article>
 
+        {/* Roast My Project */}
+        <article className="proj-card anim d2 bg-neutral-950 rounded-2xl overflow-hidden flex flex-col">
+          <div className="bg-neutral-900 aspect-video relative border-b border-neutral-800 overflow-hidden">
+            <img src="/assets/roast_my_project_preview.png" alt="Roast My Project Preview" className="absolute inset-0 w-full h-full object-cover" />
+          </div>
+          <div className="p-6 flex flex-col flex-1">
+            <StatusDot label="Live" />
+            <div className="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 01</div>
+            <h3 className="font-bold text-white text-xl mb-3">Roast My Project — AI Feedback SaaS</h3>
+            <p className="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">
+              Built a multi-model AI feedback platform routing Gemini and Groq dynamically for project reviews, resume analysis, and startup validation. Implemented Firebase/Twilio auth, Cloudinary uploads, and Payload CMS; deployed production-ready SaaS on Next.js 16 + React 19.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-5 font-mono">
+              {['Next.js 16', 'React 19', 'Payload CMS', 'Gemini', 'Groq', 'Firebase', 'Twilio', 'Cloudinary', 'Tailwind CSS v4', 'MongoDB'].map((t) => <Tag key={t}>{t}</Tag>)}
+            </div>
+            <div className="flex gap-3">
+              <a href="https://roast-my-project.vercel.app/" target="_blank" rel="noopener noreferrer" className="proj-link-demo flex-1 text-center bg-white text-black font-bold text-sm py-2.5 rounded-xl no-underline">↗ Live Demo</a>
+              <a href="https://github.com/broskell/Roast-My-Project" target="_blank" rel="noopener noreferrer" className="proj-link-code flex-1 text-center bg-transparent text-neutral-400 font-bold text-sm py-2.5 rounded-xl no-underline">⌥ GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        {/* Alimony.AI */}
+        <article className="proj-card anim d2 bg-neutral-950 rounded-2xl overflow-hidden flex flex-col">
+          <div className="bg-neutral-900 aspect-video relative border-b border-neutral-800 overflow-hidden">
+            <img src="/assets/alimony_preview.png" alt="Alimony.AI Preview" className="absolute inset-0 w-full h-full object-cover" />
+          </div>
+          <div className="p-6 flex flex-col flex-1">
+            <StatusDot label="Live" />
+            <div className="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 02</div>
+            <h3 className="font-bold text-white text-xl mb-3">Alimony.AI — Legal-Tech SaaS</h3>
+            <p className="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">
+              Developed an AI-powered Indian family law platform automating alimony calculations per Supreme Court (Rajnesh v. Neha, 2020) guidelines. Built Gemini-powered legal assistant, lawyer discovery dashboard, appointment booking, and document generation workflows.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-5 font-mono">
+              {['React', 'Node.js', 'Express', 'PostgreSQL', 'Prisma', 'Gemini', 'Zustand', 'Tailwind CSS'].map((t) => <Tag key={t}>{t}</Tag>)}
+            </div>
+            <div className="flex gap-3">
+              <a href="https://alimony-ai.vercel.app/" target="_blank" rel="noopener noreferrer" className="proj-link-demo flex-1 text-center bg-white text-black font-bold text-sm py-2.5 rounded-xl no-underline">↗ Live Demo</a>
+              <a href="https://github.com/broskell/Alimony.AI" target="_blank" rel="noopener noreferrer" className="proj-link-code flex-1 text-center bg-transparent text-neutral-400 font-bold text-sm py-2.5 rounded-xl no-underline">⌥ GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        {/* SINGULARITY */}
+        <article className="proj-card anim d3 bg-neutral-950 rounded-2xl overflow-hidden lg:col-span-2">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr]">
+            <div className="bg-neutral-900 flex items-center justify-center relative border-b md:border-b-0 md:border-r border-neutral-800 min-h-48 overflow-hidden">
+              <img src="/assets/singularity_preview.png" alt="SINGULARITY Preview" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+            <div className="p-7 flex flex-col">
+              <StatusDot label="Live" />
+              <div className="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 03</div>
+              <h3 className="font-bold text-white text-xl mb-3">SINGULARITY — Cinematic 3D Web Experience</h3>
+              <p className="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">
+                Built a 11-scene scrollytelling experience (pixel to cosmological scale) with custom GLSL shaders and audio-reactive interactions. Optimised rendering performance for complex real-time 3D scenes using GSAP ScrollTrigger and Lenis scroll-driven camera animation.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-5 font-mono">
+                {['Next.js', 'Three.js', 'React Three Fiber', 'GLSL', 'GSAP', 'Lenis'].map((t) => <Tag key={t}>{t}</Tag>)}
+              </div>
+              <div className="flex gap-3">
+                <a href="https://singularity-nine-virid.vercel.app/" target="_blank" rel="noopener noreferrer" className="proj-link-demo flex-1 text-center bg-white text-black font-bold text-sm py-2.5 rounded-xl no-underline">↗ Live Demo</a>
+                <a href="https://github.com/broskell/Singularity" target="_blank" rel="noopener noreferrer" className="proj-link-code flex-1 text-center bg-transparent text-neutral-400 font-bold text-sm py-2.5 rounded-xl no-underline">⌥ GitHub</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        {/* Lexis */}
+        <article className="proj-card anim d4 bg-neutral-950 rounded-2xl overflow-hidden flex flex-col">
+          <div className="bg-neutral-900 aspect-video relative border-b border-neutral-800 overflow-hidden">
+            <img src="/assets/main_dashboard.png" alt="Lexis Preview" className="absolute inset-0 w-full h-full object-cover" />
+          </div>
+          <div className="p-6 flex flex-col flex-1">
+            <StatusDot label="Live · Featured Project" />
+            <div className="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 04</div>
+            <h3 className="font-bold text-white text-xl mb-3">Lexis — AI Study Assistant</h3>
+            <p className="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">
+              A live lecture companion that turns speech into structured study material. Captures lectures via browser microphone, generates transcripts, then uses AI to create notes, summaries, mindmaps, quizzes, and flashcards. Includes Google sign-in, a dashboard, and lesson-aware Q&A powered by Groq.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-5 font-mono">
+              {['HTML', 'CSS', 'JavaScript', 'Firebase Auth', 'Vercel', 'Groq API', 'LLaMA 3.1'].map((t) => <Tag key={t}>{t}</Tag>)}
+            </div>
+            <div className="flex gap-3">
+              <a href="https://lexis-phi.vercel.app/" target="_blank" rel="noopener noreferrer" className="proj-link-demo flex-1 text-center bg-white text-black font-bold text-sm py-2.5 rounded-xl no-underline">↗ Live Demo</a>
+              <a href="https://github.com/broskell/Lexis" target="_blank" rel="noopener noreferrer" className="proj-link-code flex-1 text-center bg-transparent text-neutral-400 font-bold text-sm py-2.5 rounded-xl no-underline">⌥ GitHub</a>
+            </div>
+          </div>
+        </article>
+
         {/* Honey */}
         <article className="proj-card anim d2 bg-neutral-950 rounded-2xl overflow-hidden flex flex-col">
           <div className="bg-neutral-900 aspect-video relative border-b border-neutral-800 overflow-hidden">
@@ -84,12 +174,12 @@ export default function ProjectsPage() {
           </div>
           <div className="p-6 flex flex-col flex-1">
             <StatusDot label="Live" />
-            <div className="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 01</div>
+            <div className="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 05</div>
             <h3 className="font-bold text-white text-xl mb-3">Honey — Voice AI Study Buddy</h3>
             <p className="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">
               An interactive voice-powered AI assistant built for students. Features speech-to-text, text-to-speech, and intelligent responses powered by Groq's LLaMA model. Helps with study sessions through natural conversation.
             </p>
-            <div className="flex flex-wrap gap-2 mb-5">
+            <div className="flex flex-wrap gap-2 mb-5 font-mono">
               {['HTML', 'CSS', 'JavaScript', 'Node.js', 'Groq API', 'LLaMA 3.1'].map((t) => <Tag key={t}>{t}</Tag>)}
             </div>
             <div className="flex gap-3">
@@ -100,46 +190,24 @@ export default function ProjectsPage() {
         </article>
 
         {/* PlayHub */}
-        <article className="proj-card anim d3 bg-neutral-950 rounded-2xl overflow-hidden flex flex-col">
-          <div className="bg-neutral-900 aspect-video relative border-b border-neutral-800 overflow-hidden">
-            <img src="/assets/playhub_preview.png" alt="PlayHub Preview" className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-          <div className="p-6 flex flex-col flex-1">
-            <StatusDot label="Live" />
-            <div className="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 02</div>
-            <h3 className="font-bold text-white text-xl mb-3">PlayHub — Sport Booking Web App</h3>
-            <p className="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">
-              A comprehensive sports facility booking platform designed for LST students. Enables easy scheduling and management of sport courts with real-time availability and Firebase authentication.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-5">
-              {['HTML', 'CSS', 'JavaScript', 'Firebase', 'Firestore'].map((t) => <Tag key={t}>{t}</Tag>)}
-            </div>
-            <div className="flex gap-3">
-              <a href="https://playhub-lst.netlify.app/" target="_blank" rel="noopener noreferrer" className="proj-link-demo flex-1 text-center bg-white text-black font-bold text-sm py-2.5 rounded-xl no-underline">↗ Live Demo</a>
-              <a href="https://github.com/broskell/LeapStart-PlayHub" target="_blank" rel="noopener noreferrer" className="proj-link-code flex-1 text-center bg-transparent text-neutral-400 font-bold text-sm py-2.5 rounded-xl no-underline">⌥ GitHub</a>
-            </div>
-          </div>
-        </article>
-
-        {/* Lexis */}
-        <article className="proj-card anim d4 bg-neutral-950 rounded-2xl overflow-hidden lg:col-span-2">
+        <article className="proj-card anim d3 bg-neutral-950 rounded-2xl overflow-hidden lg:col-span-2">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr]">
             <div className="bg-neutral-900 flex items-center justify-center relative border-b md:border-b-0 md:border-r border-neutral-800 min-h-48 overflow-hidden">
-              <img src="/assets/main_dashboard.png" alt="Lexis Preview" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/assets/playhub_preview.png" alt="PlayHub Preview" className="absolute inset-0 w-full h-full object-cover" />
             </div>
-            <div className="p-7 flex flex-col">
-              <StatusDot label="Live · Featured Project" />
-              <div className="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 03</div>
-              <h3 className="font-bold text-white text-xl mb-3">Lexis — AI Study Assistant</h3>
+            <div className="p-7 flex flex-col flex-1">
+              <StatusDot label="Live" />
+              <div className="font-mono text-[10px] text-neutral-600 tracking-wider mb-1">PROJECT / 06</div>
+              <h3 className="font-bold text-white text-xl mb-3">PlayHub — Sport Booking Web App</h3>
               <p className="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">
-                A live lecture companion that turns speech into structured study material. Captures lectures via browser microphone, generates transcripts, then uses AI to create notes, summaries, mindmaps, quizzes, and flashcards. Includes Google sign-in, a dashboard, and lesson-aware Q&A powered by Groq.
+                A comprehensive sports facility booking platform designed for LST students. Enables easy scheduling and management of sport courts with real-time availability and Firebase authentication.
               </p>
-              <div className="flex flex-wrap gap-2 mb-5">
-                {['HTML', 'CSS', 'JavaScript', 'Firebase Auth', 'Vercel', 'Groq API', 'LLaMA 3.1'].map((t) => <Tag key={t}>{t}</Tag>)}
+              <div className="flex flex-wrap gap-2 mb-5 font-mono">
+                {['HTML', 'CSS', 'JavaScript', 'Firebase', 'Firestore'].map((t) => <Tag key={t}>{t}</Tag>)}
               </div>
               <div className="flex gap-3">
-                <a href="https://lexis-phi.vercel.app/" target="_blank" rel="noopener noreferrer" className="proj-link-demo flex-1 text-center bg-white text-black font-bold text-sm py-2.5 rounded-xl no-underline">↗ Live Demo</a>
-                <a href="https://github.com/broskell/Lexis" target="_blank" rel="noopener noreferrer" className="proj-link-code flex-1 text-center bg-transparent text-neutral-400 font-bold text-sm py-2.5 rounded-xl no-underline">⌥ GitHub</a>
+                <a href="https://playhub-lst.netlify.app/" target="_blank" rel="noopener noreferrer" className="proj-link-demo flex-1 text-center bg-white text-black font-bold text-sm py-2.5 rounded-xl no-underline">↗ Live Demo</a>
+                <a href="https://github.com/broskell/LeapStart-PlayHub" target="_blank" rel="noopener noreferrer" className="proj-link-code flex-1 text-center bg-transparent text-neutral-400 font-bold text-sm py-2.5 rounded-xl no-underline">⌥ GitHub</a>
               </div>
             </div>
           </div>
@@ -153,12 +221,17 @@ export default function ProjectsPage() {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          ['Library Management System', 'Full-stack LMS for LeapStart — React, PHP, PostgreSQL. Authentication, book inventory, issue/return workflows, admin dashboard.'],
+          ['Library Management System', 'Delivered first end-to-end live client deployment: normalised PostgreSQL schema, REST APIs in PHP, RBAC, search and pagination in React.'],
           ['Blood Bank Supply Platform', 'Rapid Blood Bank MVP — Firebase backend, FRD documentation. SDLC workshop project.'],
           ['Secure File Sharing Tool', "File encryption system using Python's cryptography library for secure transfer between parties."],
           ['Quick Commerce Analysis', 'Business data analysis examining quick-commerce market trends with Pandas & Matplotlib.'],
+          ['Fitness App (Vite + PWA Builder)', 'A progressive web application for tracking fitness routines and workouts, built using Vite and optimized for mobile installation.'],
+          ['Lexis AI Note-Taking (Hugging Face, NLP)', 'AI-powered note-taking and summarization platform leveraging Hugging Face transformers and NLP model pipelines.'],
+          ['Solar System Scrollytelling (Three.js, R3F)', 'An interactive scrollytelling experience visualizing the solar system with real-time 3D rendering in Three.js and React Three Fiber.'],
+          ['Honey (AI-Powered Study Chatbot)', 'A responsive chatbot assistant helping students with core subjects and query resolution using NLP.'],
+          ['Advanced UI Replicas (React, Next.js, Tailwind)', 'A collection of highly polished, responsive replicas of complex modern user interfaces.'],
         ].map(([title, desc]) => (
-          <div key={title} className="other-card bg-neutral-950 rounded-xl p-5">
+          <div key={title} className="other-card bg-neutral-950 rounded-xl p-5 border border-neutral-900 hover:border-yellow-500/35 hover:-translate-y-1 transition-all duration-300">
             <h4 className="font-bold text-white text-sm mb-2">{title}</h4>
             <p className="text-neutral-500 text-xs leading-relaxed">{desc}</p>
           </div>
