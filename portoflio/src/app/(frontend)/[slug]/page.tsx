@@ -67,7 +67,10 @@ export default async function Page({ params: paramsPromise }: Args) {
   const { hero, layout } = page
 
   return (
-    <article className="pt-16 pb-24">
+    <article className="pt-16 pb-24 relative">
+      {slug === 'home' && (
+        <div className="absolute inset-0 bg-grid-pattern bg-grid-fade pointer-events-none -z-10" />
+      )}
       <PageClient />
       {/* Allows redirects for valid pages too */}
       <PayloadRedirects disableNotFound url={url} />
