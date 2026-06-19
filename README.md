@@ -1,253 +1,111 @@
-# 🌟 Kellampalli Portfolio & CMS Workspace
+# Portfolio CMS Ecosystem
 
-Welcome to the central repository for the Kellampalli portfolio and website space. This workspace contains two core applications: a customizable **MERN-stack Portfolio** and a premium **Next.js & Payload CMS-powered Website/Blog platform**.
+This repository is being transformed from a working MERN portfolio into a maintainable Portfolio CMS ecosystem.
 
-🔗 **Live Deployment:** [kellampalli.vercel.app](https://kellampalli.vercel.app)
+Milestone 1 establishes the monorepo foundation only. It does not introduce CMS features, auth, dashboard CRUD, uploads, analytics, or schema rewrites yet.
 
----
+## Current Workspace
 
-## 📂 Root Folder Structure
-
-The project is organized as a workspace separating the custom React-Express MERN portfolio from the Payload CMS platform.
-
-```directory
+```txt
 Portfolio-2/
-├── portfolio/                 # Custom MERN Stack Portfolio
-│   ├── client/                # React Vite Frontend
-│   │   ├── src/               # React components, pages, routes, assets
-│   │   ├── index.html         # Application entrypoint
-│   │   ├── tailwind.config.js # Styling configurations
-│   │   └── package.json       # Frontend dependencies
-│   └── server/                # Node.js + Express + Mongoose Backend
-│       ├── config/            # DB configuration & connections
-│       ├── models/            # MongoDB schema definitions
-│       ├── routes/            # Express router mapping routes to controllers
-│       ├── seed/              # Database seeding scripts
-│       └── server.js          # Entrypoint of the backend server
-├── portoflio/                 # Premium Next.js & Payload CMS Platform (with typo)
-│   ├── public/                # Public assets, icons, fonts
-│   ├── src/                   # Next.js App Router & CMS Code
-│   │   ├── app/               # App Router pages, APIs, layouts
-│   │   ├── collections/       # Payload CMS Collection Schemas (Pages, Posts, Users)
-│   │   ├── components/        # Shared Shadcn UI & custom React components
-│   │   └── payload.config.ts  # Centralized Payload CMS setup
-│   ├── tsconfig.json          # TypeScript configurations
-│   └── package.json           # CMS platform dependencies
-└── README.md                  # Workspace documentation (this file)
+├─ apps/
+│  ├─ portfolio/       # Existing public React + Vite portfolio
+│  └─ dashboard/       # Future private admin dashboard workspace
+├─ server/             # Existing Express + MongoDB API
+├─ packages/
+│  ├─ shared/          # Future shared schemas, constants, and DTOs
+│  ├─ api-client/      # Future shared HTTP client
+│  └─ ui/              # Future shared low-level UI primitives
+├─ docs/               # Architecture and implementation planning
+├─ package.json        # Root workspace scripts
+├─ pnpm-workspace.yaml # pnpm workspace package map
+└─ turbo.json          # Task orchestration
 ```
 
----
+The existing `portoflio/` directory is still present as a separate Next.js/Payload experiment. It is intentionally not part of the active pnpm workspace because the approved architecture is the custom MERN CMS path.
 
-## 🛠️ Technology Stack
+## Why Monorepo
 
-### 1. Custom MERN Portfolio (`portfolio/`)
-Built as a decoupled single-page application with a dedicated API layer:
+The portfolio, dashboard, API server, shared contracts, and API client belong to one product ecosystem. A monorepo lets content models, validators, routes, and frontend integrations evolve together without copy-pasting types or duplicating HTTP clients across repositories.
 
-*   **Frontend Client (`portfolio/client`):**
-    *   **React 18 & Vite:** Lightning-fast HMR and building pipeline.
-    *   **React Router Dom (v7):** Modern declarative client-side routing.
-    *   **Tailwind CSS (v3):** Utility-first styling for speed and flexibility.
-    *   **Framer Motion:** High-fidelity animations and micro-transitions.
-    *   **Axios:** Promise-based HTTP client for API consumption.
-*   **Backend Server (`portfolio/server`):**
-    *   **Node.js & Express:** Lightweight routing and middleware server.
-    *   **Mongoose & MongoDB:** Document database ODM schema modeling.
-    *   **CORS & Dotenv:** Cross-Origin Resource Sharing handling and environment management.
+This matters because the final goal is content management without code edits. The dashboard and portfolio must agree exactly on data shapes, publish states, upload metadata, and API response contracts.
 
-### 2. CMS Platform (`portoflio/`)
-A state-of-the-art server-rendered system combining a headless CMS and site:
+## Why pnpm
 
-*   **Framework:** **Next.js 16 (App Router)** & **React 19**
-*   **Headless CMS:** **Payload CMS 3.x**
-*   **Database:** MongoDB via **@payloadcms/db-mongodb** adapter.
-*   **Styling & UI:** **Tailwind CSS v4** + **Shadcn/UI** (built on Radix Primitives).
-*   **Forms:** React Hook Form for client/admin interactions.
-*   **Plugins:** Payload Search, SEO, Redirects, and Nested Docs plugins.
+pnpm gives the workspace fast installs, strict dependency isolation, and efficient disk usage. It also makes it easy to run commands against one package with `--filter`, which keeps each milestone small and testable.
 
----
+## Why Turborepo
 
-## 📊 UML Diagrams
+Turborepo coordinates scripts across the workspace. As the project grows, it will let us build, lint, test, and cache only the packages affected by a change. That keeps the portfolio, dashboard, server, and shared packages scalable without turning the repo into a slow pile of scripts.
 
-### 1. System Architecture Diagram
-This component diagram shows how frontend clients communicate with databases and backends across the deployed systems.
+## Commands
 
-```mermaid
-graph TD
-    subgraph Vercel Deployment [Hosting: kellampalli.vercel.app]
-        NextApp[Next.js App Router / React 19]
-        ViteApp[Vite React Client]
-    end
+Install dependencies:
 
-    subgraph Backend Services & Admin Panels
-        ExpressServer[Express Backend / portfolio/server]
-        PayloadCMS[Payload CMS Admin Panel]
-    end
-
-    subgraph Databases
-        MongoCMS[(MongoDB Atlas - CMS)]
-        MongoDB[(MongoDB - MERN)]
-    end
-
-    %% Routing Flow
-    NextApp -->|Direct Integration / SSR| PayloadCMS
-    PayloadCMS -->|Database Adapter| MongoCMS
-    
-    ViteApp -->|REST API Calls| ExpressServer
-    ExpressServer -->|Mongoose ODM| MongoDB
+```bash
+pnpm install
 ```
 
-### 2. Database Schema Class UML
-Describes the structured data schema for the MERN applications (Message, Project, Skill) and the main collections configured within Payload CMS.
+Run the public portfolio:
 
-```mermaid
-classDiagram
-    %% MERN Collections
-    class Message {
-        +String name
-        +String email
-        +String subject
-        +String message
-        +Date createdAt
-        +Boolean read
-    }
-
-    class Project {
-        +String title
-        +String subtitle
-        +String description
-        +String[] techStack
-        +String liveUrl
-        +String githubUrl
-        +String image
-        +Boolean featured
-        +Number order
-        +String status
-        +String[] highlights
-    }
-
-    class Skill {
-        +String name
-        +String category
-        +Number proficiency
-        +String icon
-        +Boolean learning
-    }
-
-    %% CMS Collections
-    class User {
-        +String email
-        +String password
-        +String role
-    }
-
-    class Page {
-        +String title
-        +String slug
-        +LayoutBlock[] layout
-        +SEO seo
-        +String status
-    }
-
-    class Post {
-        +String title
-        +String slug
-        +Category[] categories
-        +LayoutBlock[] layout
-        +SEO seo
-        +String status
-    }
-
-    class Category {
-        +String title
-        +Category parent
-    }
-
-    class Media {
-        +String filename
-        +String mimeType
-        +Number filesize
-        +String url
-    }
-
-    Post --> Category : references
-    Page --> Media : references
-    Post --> Media : references
+```bash
+pnpm dev:portfolio
 ```
 
----
+Run the Express server:
 
-## 🚀 Running Locally
+```bash
+pnpm dev:server
+```
 
-### Prerequisites
-*   Node.js (v18.20.2 or higher, v20+ recommended)
-*   MongoDB Instance (Local running MongoDB daemon or MongoDB Atlas URL)
-*   `pnpm` or `npm` package manager installed globally
+Run portfolio and server together:
 
----
+```bash
+pnpm dev
+```
 
-### Step 1: Starting the MERN Portfolio (`portfolio/`)
+Build workspace packages that currently expose a build script:
 
-#### 💻 Backend Setup
-1. Navigate to the server folder:
-   ```bash
-   cd portfolio/server
-   ```
-2. Copy configuration environment variables:
-   ```bash
-   cp .env.example .env
-   ```
-3. Open `.env` and supply your database connection string and port:
-   ```env
-   PORT=5000
-   MONGO_URI=your_mongodb_connection_string
-   CLIENT_URL=http://localhost:5173
-   ```
-4. Install dependencies:
-   ```bash
-   npm install
-   ```
-5. Seed database mock projects/skills:
-   ```bash
-   npm run seed
-   ```
-6. Start dev server:
-   ```bash
-   npm run dev
-   ```
+```bash
+pnpm build
+```
 
-#### 🖥️ Frontend Setup
-1. Navigate to the client folder:
-   ```bash
-   cd portfolio/client
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start development server:
-   ```bash
-   npm run dev
-   ```
+Lint workspace packages that currently expose a lint script:
 
----
+```bash
+pnpm lint
+```
 
-### Step 2: Starting the Next.js + Payload CMS (`portoflio/`)
+Format the repository:
 
-1. Navigate to the CMS directory:
-   ```bash
-   cd portoflio
-   ```
-2. Copy environment variables:
-   ```bash
-   cp .env.example .env
-   ```
-3. Update `.env` with your Mongo URI configuration.
-4. Install dependencies:
-   ```bash
-   pnpm install
-   ```
-5. Run development server:
-   ```bash
-   pnpm dev
-   ```
-6. Open admin dashboard at [http://localhost:3000/admin](http://localhost:3000/admin) to manage collections and content pages.
+```bash
+pnpm format
+```
+
+Check formatting without writing changes:
+
+```bash
+pnpm format:check
+```
+
+Seed the existing database:
+
+```bash
+pnpm seed
+```
+
+## Milestone 1 Testing Checklist
+
+- Confirm `apps/portfolio` exists and contains the previous Vite portfolio.
+- Confirm `server` exists and contains the previous Express API.
+- Confirm `apps/dashboard`, `packages/shared`, `packages/api-client`, and `packages/ui` exist as workspace packages.
+- Run `pnpm install`.
+- Run `pnpm lint`.
+- Run `pnpm build`.
+- Run `pnpm --filter @portfolio/server start` only when `MONGODB_URI` is available.
+- Run `pnpm dev:portfolio` to verify the Vite app boots.
+- Run `pnpm dev:server` to verify the API boots when database environment variables are configured.
+
+## Next Milestone
+
+Milestone 2 will introduce the production backend structure: `server/src/app.js`, `server/src/server.js`, centralized config, middleware, modules, and the first integration test safety net while preserving the current public API behavior.

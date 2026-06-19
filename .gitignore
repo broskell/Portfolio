@@ -1,0 +1,28 @@
+# Dependencies are installed from lockfiles, not committed.
+node_modules/
+
+# Build outputs are reproducible and should stay out of source control.
+dist/
+build/
+.next/
+.turbo/
+coverage/
+
+# Environment files contain secrets or machine-specific configuration.
+.env
+.env.*
+!.env.example
+
+# Logs and process dumps are runtime artifacts.
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating-system and editor noise does not belong in the repository.
+.DS_Store
+Thumbs.db
+
+# Vercel and local tool state are regenerated per machine.
+.vercel/

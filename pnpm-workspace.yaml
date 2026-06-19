@@ -1,0 +1,7 @@
+# This workspace file is the source of truth for every package that pnpm links together.
+# Keeping apps, server, and shared packages in one workspace prevents duplicate installs
+# and lets future API contracts be consumed consistently by both React applications.
+packages:
+  - "apps/*"
+  - "server"
+  - "packages/*"
