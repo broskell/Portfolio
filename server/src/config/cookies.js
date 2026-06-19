@@ -6,8 +6,16 @@ import { env } from './env.js'
  */
 export const getCookieOptions = () => ({
   httpOnly: true,
-  secure: env.NODE_ENV === 'production',
-  sameSite: env.NODE_ENV === 'production' ? 'none' : 'lax',
+  secure: env.NODE_ENV !== 'test',
+  sameSite: env.NODE_ENV !== 'test' ? 'none' : 'lax',
   path: '/api/auth/refresh',
+  maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
+})
+
+export const getHasTokenCookieOptions = () => ({
+  httpOnly: false,
+  secure: env.NODE_ENV !== 'test',
+  sameSite: env.NODE_ENV !== 'test' ? 'none' : 'lax',
+  path: '/',
   maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
 })

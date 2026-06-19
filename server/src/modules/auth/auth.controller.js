@@ -1,13 +1,14 @@
 import { AuthService } from './auth.service.js'
 import { successResponse } from '../../utils/successResponse.js'
 import { asyncHandler } from '../../middleware/asyncHandler.js'
-import { getCookieOptions } from '../../config/cookies.js'
+import { getCookieOptions, getHasTokenCookieOptions } from '../../config/cookies.js'
 
 export const login = asyncHandler(async (req, res) => {
   const { user, accessToken, refreshToken } = await AuthService.login(req.body)
 
   // Apply centralized cookie configurations
   res.cookie('refreshToken', refreshToken, getCookieOptions())
+  res.cookie('hasRefreshToken', 'true', getHasTokenCookieOptions())
 
   return successResponse(res, { user }, 200, { meta: { accessToken } })
 })
@@ -22,6 +23,15 @@ export const logout = asyncHandler(async (req, res) => {
     maxAge: 0
   })
 
+  const hasTokenOptions = getHasTokenCookieOptions()
+  res.clearCookie('hasRefreshToken', {
+    httpOnly: false,
+    secure: hasTokenOptions.secure,
+    sameSite: hasTokenOptions.sameSite,
+    path: hasTokenOptions.path,
+    maxAge: 0
+  })
+
   return res.status(204).end()
 })
 
@@ -30,6 +40,7 @@ export const refresh = asyncHandler(async (req, res) => {
   const { accessToken, refreshToken: newRefreshToken } = await AuthService.refresh(token)
 
   res.cookie('refreshToken', newRefreshToken, getCookieOptions())
+  res.cookie('hasRefreshToken', 'true', getHasTokenCookieOptions())
 
   return successResponse(res, null, 200, { meta: { accessToken } })
 })

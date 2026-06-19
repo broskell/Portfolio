@@ -14,12 +14,19 @@ export class AuthService {
    * Log in user, hash and store refresh token.
    */
   static async login({ email, password }) {
+    console.log(`[AUTH SERVICE login] email: ${email}`)
     const user = await User.findOne({ email, isDeleted: false }).select('+passwordHash')
+    console.log(`[AUTH SERVICE login] email found: ${!!user}`)
     if (!user) {
       throw new ApiError(401, 'Invalid email or password', [], 'INVALID_CREDENTIALS')
     }
 
+    console.log(`[AUTH SERVICE login] passwordHash exists: ${!!user.passwordHash}`)
+    if (!user.passwordHash) {
+      throw new ApiError(401, 'Invalid email or password', [], 'INVALID_CREDENTIALS')
+    }
     const isMatch = await bcrypt.compare(password, user.passwordHash)
+    console.log(`[AUTH SERVICE login] bcrypt.compare result: ${isMatch}`)
     if (!isMatch) {
       throw new ApiError(401, 'Invalid email or password', [], 'INVALID_CREDENTIALS')
     }

@@ -25,7 +25,14 @@ http.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config
 
-    if (error.response?.status === 401 && !originalRequest?._retry) {
+    if (
+      error.response?.status === 401 &&
+      originalRequest &&
+      !originalRequest._retry &&
+      originalRequest.url &&
+      !originalRequest.url.includes('/auth/refresh') &&
+      !originalRequest.url.includes('/auth/login')
+    ) {
       originalRequest._retry = true
       try {
         const refreshResponse = await http.post('/auth/refresh')
@@ -35,8 +42,9 @@ http.interceptors.response.use(
           originalRequest.headers.Authorization = `Bearer ${accessToken}`
           return http(originalRequest)
         }
-      } catch {
+      } catch (refreshError) {
         useAuthStore.getState().clearAuth()
+        document.cookie = 'hasRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
       }
     }
 
