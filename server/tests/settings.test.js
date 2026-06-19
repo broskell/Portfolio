@@ -184,8 +184,8 @@ describe('Settings API Integration Tests', () => {
   describe('Rate Limiting & Security Headers Check', () => {
     it('should return rate limiting headers on api requests', async () => {
       const res = await request(app).get('/api/settings')
-      expect(res.headers).toHaveProperty('x-ratelimit-limit')
-      expect(res.headers).toHaveProperty('x-ratelimit-remaining')
+      expect(res.headers).toHaveProperty('ratelimit-limit')
+      expect(res.headers).toHaveProperty('ratelimit-remaining')
     })
 
     it('should configure Helmet security headers', async () => {

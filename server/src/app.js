@@ -64,18 +64,20 @@ app.use(
 
 app.use(express.json())
 
-// Global API rate limiter applied to all endpoints under /api
-app.use('/api', apiLimiter)
+// Contact has its own submission-specific limiter and should not consume the broad API bucket.
+app.use('/api/contact', contactRoutes)
 
 // Health Check
 app.get('/api/health', (_req, res) => res.json({ status: 'ok' }))
+
+// Global API rate limiter applied to remaining endpoints under /api.
+app.use('/api', apiLimiter)
 
 // API Routes
 app.use('/api/auth', authRoutes)
 app.use('/api/settings', settingsRoutes)
 app.use('/api/projects', projectRoutes)
 app.use('/api/skills', skillRoutes)
-app.use('/api/contact', contactRoutes)
 app.use('/api/uploads', uploadRoutes)
 
 // Route handlers

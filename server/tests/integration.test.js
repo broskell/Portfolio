@@ -84,6 +84,24 @@ describe('Express API Integration Tests', () => {
       expect(saved.name).toBe('John Doe')
     })
 
+    it('should store each submitted contact message exactly once', async () => {
+      const payload = {
+        name: 'Jane Doe',
+        email: 'jane@example.com',
+        subject: 'Follow up',
+        message: 'Checking duplicate handling',
+      }
+
+      const first = await request(app).post('/api/contact').send(payload)
+      const second = await request(app).post('/api/contact').send(payload)
+
+      expect(first.status).toBe(201)
+      expect(second.status).toBe(201)
+
+      const saved = await Message.find({ email: 'jane@example.com', subject: 'Follow up' })
+      expect(saved).toHaveLength(2)
+    })
+
     it('should return 400 when fields are missing', async () => {
       const payload = {
         name: 'John Doe',

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { sendMessage } from '../api'
 import { useTypingEffect } from '../hooks/useTypingEffect'
+import { getContactErrorMessage } from './contactErrors'
 
 function TerminalSuccess({ show }) {
   const msg = "Message received! I'll get back to you soon."
@@ -40,6 +41,8 @@ export default function Contact() {
 
   const handleSubmit = async (ev) => {
     ev.preventDefault()
+    if (submitting) return
+
     if (!validate()) return
     setSubmitting(true)
     try {
@@ -47,8 +50,8 @@ export default function Contact() {
       setSuccess(true)
       setForm({ name: '', email: '', subject: '', message: '' })
       setTimeout(() => setSuccess(false), 8000)
-    } catch {
-      setErrors({ form: 'Failed to send. Please try again.' })
+    } catch (error) {
+      setErrors({ form: getContactErrorMessage(error) })
     } finally {
       setSubmitting(false)
     }
