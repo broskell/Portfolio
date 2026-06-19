@@ -5,7 +5,7 @@ import { LockKeyhole, Loader2 } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { z } from 'zod'
-import { login } from './auth.api.js'
+import { login, parseAuthPayload } from './auth.api.js'
 import { useAuthStore } from './auth.store.js'
 
 const loginSchema = z.object({
@@ -32,11 +32,20 @@ export const LoginPage = () => {
   })
 
   const mutation = useMutation({
-    mutationFn: login,
-    onSuccess: (payload) => {
+    mutationFn: async (values) => {
+      const payload = await login(values)
+      const session = parseAuthPayload(payload)
+
+      if (!session.accessToken || !session.user) {
+        throw new Error('Login response did not include a valid session.')
+      }
+
+      return session
+    },
+    onSuccess: (session) => {
       setSession({
-        accessToken: payload.meta?.accessToken,
-        user: payload.data?.user || null
+        accessToken: session.accessToken,
+        user: session.user
       })
       navigate(destination, { replace: true })
     }
@@ -83,7 +92,7 @@ export const LoginPage = () => {
 
           {mutation.isError && (
             <div className="border border-line bg-card px-3 py-2 text-sm text-ink">
-              {mutation.error?.response?.data?.error?.message || 'Sign in failed.'}
+              {mutation.error?.response?.data?.error?.message || mutation.error?.message || 'Sign in failed.'}
             </div>
           )}
 
