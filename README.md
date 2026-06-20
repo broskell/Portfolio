@@ -75,17 +75,23 @@ The platform implements a complete, modular, and dynamic **CMS architecture** wi
 
 The Admin Dashboard is built with a premium, responsive dark luxury design system, leveraging custom tables, dynamic form schemas, glassmorphic filters, and interactive panels.
 
-````carousel
+### 📊 Dashboard Control Center
 ![Dashboard System Overview](assets/dashboard_page.png)
-<!-- slide -->
-![Settings Configuration Profile Tab](assets/settings_profile.png)
-<!-- slide -->
-![Settings SEO Metadata Configuration](assets/settings_seo.png)
-<!-- slide -->
-![Settings Social Channels Configuration](assets/settings_socials.png)
-<!-- slide -->
+
+### ⚙️ Administrative Settings Configuration
+The settings panel is split into clean, modular sections to configure different segments of the portfolio site dynamically.
+
+| 👤 Profile Customization | 🔍 SEO Metadata Setup |
+| :---: | :---: |
+| ![Settings Configuration Profile Tab](assets/settings_profile.png) | ![Settings SEO Metadata Configuration](assets/settings_seo.png) |
+
+| 🌐 Social Channels Linkage |
+| :---: |
+| ![Settings Social Channels Configuration](assets/settings_socials.png) |
+
+### 📈 Activity & System Analytics
+Provides a quick overview of document frequencies and usage patterns across all collections.
 ![Analytics & Activity Panel](assets/analytics_page.png)
-````
 
 ---
 
