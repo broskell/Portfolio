@@ -9,6 +9,12 @@ const api = axios.create({
 
 export const getProjects = () => api.get('/projects')
 export const getSkills = () => api.get('/skills')
+export const wakeupBackend = async () => {
+  await Promise.allSettled([
+    api.get('/health'),
+    axios.get('https://portfolio-57o9.onrender.com/api/health'),
+  ])
+}
 export const sendMessage = async (data) => {
   try {
     console.log('Request', '/contact', data)

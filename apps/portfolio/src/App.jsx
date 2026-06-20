@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
@@ -7,8 +8,14 @@ import ProjectsPage from './pages/ProjectsPage'
 import TechStackPage from './pages/TechStackPage'
 import TerminalPage from './pages/TerminalPage'
 import ContactPage from './pages/ContactPage'
+import { wakeupBackend } from './api'
 
 export default function App() {
+  useEffect(() => {
+    // Non-blocking ping to wake up the backend on Render
+    wakeupBackend().catch(() => {})
+  }, [])
+
   return (
     <BrowserRouter>
       <Routes>

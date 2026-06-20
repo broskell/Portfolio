@@ -11,8 +11,15 @@ import authRoutes from './modules/auth/auth.routes.js'
 import settingsRoutes from './modules/settings/settings.routes.js'
 import projectRoutes from './modules/projects/project.routes.js'
 import skillRoutes from './modules/skills/skill.routes.js'
+import certificateRoutes from './modules/certificates/certificate.routes.js'
+import experienceRoutes from './modules/experience/experience.routes.js'
+import blogRoutes from './modules/blogs/blog.routes.js'
+import timelineRoutes from './modules/timeline/timeline.routes.js'
+import achievementRoutes from './modules/achievements/achievement.routes.js'
+import testimonialRoutes from './modules/testimonials/testimonial.routes.js'
 import contactRoutes from './modules/contact/contact.routes.js'
 import uploadRoutes from './modules/uploads/upload.routes.js'
+import analyticsRoutes from './modules/analytics/analytics.routes.js'
 
 const app = express()
 
@@ -77,8 +84,15 @@ app.use('/api/auth', authRoutes)
 app.use('/api/settings', settingsRoutes)
 app.use('/api/projects', projectRoutes)
 app.use('/api/skills', skillRoutes)
+app.use('/api/certificates', certificateRoutes)
+app.use('/api/experience', experienceRoutes)
+app.use('/api/blogs', blogRoutes)
+app.use('/api/timeline', timelineRoutes)
+app.use('/api/achievements', achievementRoutes)
+app.use('/api/testimonials', testimonialRoutes)
 app.use('/api/contact', contactRoutes)
 app.use('/api/uploads', uploadRoutes)
+app.use('/api/analytics', analyticsRoutes)
 
 // Route handlers
 app.use(notFound)

@@ -5,6 +5,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { moduleRoutes, primaryRoutes } from '../config/modules.js'
 import { logout } from '../features/auth/auth.api.js'
 import { useAuthStore } from '../features/auth/auth.store.js'
+import { ToastContainer } from '../components/ToastContainer.jsx'
 
 const navLinkClass = ({ isActive }) =>
   [
@@ -113,6 +114,7 @@ export const DashboardLayout = () => {
           <Outlet />
         </main>
       </div>
+      <ToastContainer />
     </div>
   )
 }
