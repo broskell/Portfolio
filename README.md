@@ -32,6 +32,44 @@ Portfolio-2/
 
 ---
 
+## 🛠️ Technology Stack
+
+The ecosystem uses a highly specialized stack for speed, responsiveness, security, and developer ergonomics:
+
+### ⚙️ Monorepo Tooling & Orchestration
+* **Turborepo** — Advanced task-runner, pipeline orchestrator, and build-caching engine.
+* **pnpm Workspaces** — Rapid package linking, node_modules isolation, and dependency deduplication.
+* **ESLint & Prettier** — Strict monorepo-wide code linting rules and format standardization.
+
+### 🌐 Backend REST API (`server/`)
+* **Node.js & Express.js** — Lightweight, asynchronous runtime and web application frameworks.
+* **MongoDB & Mongoose** — Schema-based object data modeling (ODM) for document-oriented database management.
+* **Zod** — Strict runtime validator schemas for cleaning and sanitizing incoming client payloads.
+* **JWT (jsonwebtoken) & BcryptJS** — Secure access token handling, session tracking, and salt-hashed password encryption.
+* **Helmet** — Security header middleware protection (XSS filters, content security policies, frameguards).
+* **Express Rate Limit** — Access controls and limits to block brute force attacks on database writes.
+* **Cloudinary & Multer** — Multi-part image streams and assets upload pipeline.
+
+### 💻 Admin CMS Dashboard (`apps/dashboard/`)
+* **React 18 & Vite** — Next-generation frontend framework and lightning-fast HMR module builder.
+* **TanStack Query (React Query v5)** — Server state management, smart cache invalidation on mutations, and background synchronization.
+* **Zustand** — Minimal, high-performance global client-side state store.
+* **React Hook Form** — Dynamic input validator hooks.
+* **TailwindCSS & PostCSS** — Declarative, utility-first UI styling.
+* **Axios** — Custom request client with interceptors for auth flow restoration and access token refreshes.
+
+### 🎨 Public Portfolio Client (`apps/portfolio/`)
+* **React 18 & Vite** — Client framework and build tool.
+* **Framer Motion** — Fluid spring-physics web animations and interactive scrollytelling sequences.
+* **React Intersection Observer** — Hook to orchestrate elements entering the viewport.
+* **TailwindCSS** — Custom dark-luxury luxury color palette utility layout framework.
+
+### 🧪 Quality Assurance & Testing
+* **Vitest** — Vite-native unit and integration test runner.
+* **Supertest** — API request/response assertion engine.
+
+---
+
 ## 🛠️ CMS Ecosystem Features & Modules
 
 The platform implements a complete, modular, and dynamic **CMS architecture** with full CRUD capabilities across **11 content modules**:
