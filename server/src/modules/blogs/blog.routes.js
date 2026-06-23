@@ -6,6 +6,7 @@ import { blogSchema } from '../module.validation.js'
 import {
   getBlogs,
   getBlogById,
+  getBlogBySlug,
   createBlog,
   updateBlog,
   deleteBlog,
@@ -16,7 +17,9 @@ const router = Router()
 
 // Public routes
 router.get('/', getBlogs)
+router.get('/slug/:slug', getBlogBySlug)
 router.get('/:id', getBlogById)
+
 
 // Private admin routes
 router.post('/', requireAuth, requireRole('admin'), validate(blogSchema), createBlog)

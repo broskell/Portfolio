@@ -8,6 +8,7 @@ export const PAGES = [
   { key: '5', label: 'Tech Stack', path: '/techstack' },
   { key: '6', label: 'Terminal', path: '/terminal' },
   { key: '7', label: 'Contact', path: '/contact' },
+  { key: '8', label: 'Blog', path: '/blog' },
 ]
 
 export const QUICK_NAV = [
@@ -45,6 +46,13 @@ export const QUICK_NAV = [
     desc: 'Interactive CLI — try it out!',
     key: '6',
     icon: 'terminal',
+  },
+  {
+    path: '/blog',
+    label: 'Blog',
+    desc: 'Articles on software engineering & AI',
+    key: '8',
+    icon: 'blog',
   },
   {
     path: '/contact',

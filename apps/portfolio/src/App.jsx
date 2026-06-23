@@ -8,6 +8,8 @@ import ProjectsPage from './pages/ProjectsPage'
 import TechStackPage from './pages/TechStackPage'
 import TerminalPage from './pages/TerminalPage'
 import ContactPage from './pages/ContactPage'
+import BlogListPage from './pages/BlogListPage'
+import BlogDetailPage from './pages/BlogDetailPage'
 import { wakeupBackend } from './api'
 
 export default function App() {
@@ -27,6 +29,8 @@ export default function App() {
           <Route path="/techstack" element={<TechStackPage />} />
           <Route path="/terminal" element={<TerminalPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blog" element={<BlogListPage />} />
+          <Route path="/blog/:slug" element={<BlogDetailPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

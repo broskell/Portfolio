@@ -9,6 +9,8 @@ const api = axios.create({
 
 export const getProjects = () => api.get('/projects')
 export const getSkills = () => api.get('/skills')
+export const getBlogs = () => api.get('/blogs')
+export const getBlogBySlug = (slug) => api.get(`/blogs/slug/${slug}`)
 export const wakeupBackend = async () => {
   await Promise.allSettled([
     api.get('/health'),
